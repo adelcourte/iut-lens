@@ -3,6 +3,6 @@
 	<head>
 	</head>
 	<body>
-		<?php get_template_part('template-parts/homepage/hero'); ?>
+		<?php get_template_part('data-managers/homepage/Hero'); ?>
 	</body>
 </html>
