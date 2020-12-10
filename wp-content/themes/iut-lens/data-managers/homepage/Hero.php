@@ -4,9 +4,9 @@
     $uptitle = \get_field('_hp_hero_uptitle');
     $title = \get_field('_hp_hero_title');
     $content = \get_field('_hp_hero_content');
-    $link_ed = \get_field('_hp_hero_link_ed');
+    $link = \get_field('_hp_hero_link');
     $link_news = \get_field('_hp_hero_link_news');
-    $link_vid = \get_field('_hp_hero_link_vid');
+    $link_video = \get_field('_hp_hero_link_video');
     $image_id = \get_field('_hp_hero_image_id');
 
     // Adjusting datas
@@ -28,17 +28,17 @@
         $content = '';
     }
 
-    if(!empty($link_ed)) {
-        $link_ed_url = $link_ed['url'];
-        $link_ed_title = $link_ed['title'];
-        $link_ed_target = $link_ed['target'];
+    if(!empty($link)) {
+        $link_url = $link['url'];
+        $link_title = $link['title'];
+        $link_target = $link['target'];
     } else {
-        $link_ed_url = '';
-        $link_ed_title = '';
-        $link_ed_target = '';
+        $link_url = '';
+        $link_title = '';
+        $link_target = '';
     }
 
-    if(!empty($link_ed)) {
+    if(!empty($link_news)) {
         $link_news_url = $link_news['url'];
         $link_news_title = $link_news['title'];
         $link_news_target = $link_news['target'];
@@ -48,14 +48,14 @@
         $link_news_target = '';
     }
 
-    if(!empty($link_ed)) {
-        $link_vid_url = $link_vid['url'];
-        $link_vid_title = $link_vid['title'];
-        $link_vid_target = $link_vid['target'];
+    if(!empty($link_video)) {
+        $link_video_url = $link_video['url'];
+        $link_video_title = $link_video['title'];
+        $link_video_target = $link_video['target'];
     } else {
-        $link_vid_url = '';
-        $link_vid_title = '';
-        $link_vid_target = '';
+        $link_video_url = '';
+        $link_video_title = '';
+        $link_video_target = '';
     }
 
     if(!empty($image_id)) {
@@ -70,17 +70,17 @@
         'title' => $title,
         'content' => $content,
 
-        'link_ed_url' => $link_ed_url,
-        'link_ed_title' => $link_ed_title,
-        'link_ed_target' => $link_ed_target,
+        'link_url' => $link_url,
+        'link_title' => $link_title,
+        'link_target' => $link_target,
 
         'link_news_url' => $link_news_url,
         'link_news_title' => $link_news_title,
         'link_news_target' => $link_news_target,
 
-        'link_vid_url' => $link_vid_url,
-        'link_vid_title' => $link_vid_title,
-        'link_vid_target' => $link_vid_target,
+        'link_video_url' => $link_video_url,
+        'link_video_title' => $link_video_title,
+        'link_video_target' => $link_video_target,
 
         'src' => $src,
     ];
