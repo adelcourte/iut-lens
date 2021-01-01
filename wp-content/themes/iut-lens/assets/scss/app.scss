@@ -1,0 +1,81 @@
+$sm-breakpoint:  767px;
+$md-breakpoint: 1250px;
+$lg-breakpoint: 1440px;
+
+$sm-range:   (0, $sm-breakpoint);
+$md-range:  ($sm-breakpoint  + 1px, $md-breakpoint);
+$lg-range:   ($md-breakpoint + 1px, $lg-breakpoint);
+
+$screen: "only screen";
+
+$sm-up: $screen;
+$sm-only: "#{$screen} and (max-width: #{nth($sm-range, 2)})";
+
+$md-up: "#{$screen} and (min-width:#{nth($md-range, 1)})";
+$md-only: "#{$screen} and (min-width:#{nth($md-range, 1)}) and (max-width:#{nth($md-range, 2)})";
+
+$lg-up: "#{$screen} and (min-width:#{nth($lg-range, 1)})";
+$lg-only: "#{$screen} and (min-width:#{nth($lg-range, 1)}) and (max-width:#{nth($lg-range, 2)})";
+
+$retina: (
+  "#{$screen} and (-webkit-min-device-pixel-ratio: 2)",
+  "#{$screen} and (min--moz-device-pixel-ratio: 2)",
+  "#{$screen} and (-o-min-device-pixel-ratio: 2/1)",
+  "#{$screen} and (min-device-pixel-ratio: 2)",
+  "#{$screen} and (min-resolution: 192dpi)",
+  "#{$screen} and (min-resolution: 2dppx)"
+);
+
+// Legacy
+$sm: $sm-up;
+$md: $md-up;
+$lg: $lg-up;
+
+$bps: (
+ #{$sm} 'sm',
+ #{$md} 'md',
+ #{$lg} 'lg'
+);
+
+// Global
+@import '_global/_variables';
+@import '_global/_mixins';
+@import '_global/_typography';
+@import '_global/_fonts';
+
+// Helpers
+@import '_helpers/_grid';
+@import '_helpers/_toolbox';
+@import '_helpers/_sections';
+
+// Atoms
+@import '_atoms/_links';
+@import '_atoms/_images';
+@import '_atoms/_icons';
+@import '_atoms/_cards';
+@import '_atoms/_underlines';
+
+// Molecules
+@import '_molecules/_hp_hero';
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1.8rem;
+    font-family: "Montserrat", sans-serif;
+    color: #{clr(gray_dark)};
+    line-height: 1.25;
+    background-color: #{clr(body_background)};
+    //background-color: #ecf0f3;
+}
+
+* {
+  box-sizing: border-box;
+}

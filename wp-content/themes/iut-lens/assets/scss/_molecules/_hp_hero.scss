@@ -1,0 +1,94 @@
+.shape-1, .shape-2, .shape-3, .shape-4, .shape-5 {
+    content: "";
+    padding-bottom: 100%;
+    background: #{clr(blue)};
+    border-radius: 0 0 0 1000rem;
+    overflow: hidden;
+    display: inline-block;
+    transition: $transition;
+    animation-delay: 5s;
+}
+
+.shape-1 {
+    animation: shape_1 ease-in-out 20s infinite;
+}
+
+.shape-2 {
+    background: #{clr(blue_dark)};
+    border-radius: 1000rem 0 0 0;
+    animation: shape_2 ease-in-out 20s infinite;
+}
+
+.shape-3 {
+    padding-bottom: 25%;
+    border-radius: 0 1000rem 0 0;
+    animation: shape_3 ease-in-out 20s infinite;
+}
+
+.shape-4 {
+    padding-bottom: 25%;
+    background: #{clr(blue_light)};
+    border-radius: 1000rem;
+}
+
+.shape-5 {
+    padding-bottom: 25%;
+    background: #{clr(blue_dark)};
+    border-radius: 1000rem 1000rem 0 0;
+    animation: shape_5 ease-in-out 20s infinite;
+}
+
+.shape-image {
+    content: "";
+    height: 100%;
+    overflow: hidden;
+    background-color: #{clr(blue_light)};
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius : 0 50% 0 0;
+    animation: shape_image ease-in-out 20s infinite;
+}
+
+
+
+// Animations
+@keyframes shape_1 {
+    from    {border-radius: 0 0 0 1000rem;}
+    40%     {border-radius: 0 0 0 1000rem;}
+    50%     {border-radius: 0 1000rem 0 0;}
+    90%     {border-radius: 0 1000rem 0 0;}
+    to      {border-radius: 0 0 0 1000rem;}
+}
+
+@keyframes shape_2 {
+    from    {border-radius: 1000rem 0 0 0;}
+    40%     {border-radius: 1000rem 0 0 0;}
+    50%     {border-radius: 0 0 1000rem 0;}
+    90%     {border-radius: 0 0 1000rem 0;}
+    to      {border-radius: 1000rem 0 0 0;}
+}
+
+@keyframes shape_3 {
+    from    {border-radius: 0 1000rem 0 0;}
+    40%     {border-radius: 0 1000rem 0 0;}
+    50%     {border-radius: 0 0 0 1000rem;}
+    90%     {border-radius: 0 0 0 1000rem;}
+    to      {border-radius: 0 1000rem 0 0;}
+}
+
+@keyframes shape_5 {
+    from    {border-radius: 1000rem 1000rem 0 0;}
+    40%     {border-radius: 1000rem 1000rem 0 0;}
+    50%     {border-radius: 0 0 1000rem 1000rem;}
+    90%     {border-radius: 0 0 1000rem 1000rem;}
+    to      {border-radius: 1000rem 1000rem 0 0;}
+}
+
+@keyframes shape_image {
+    from    {border-radius : 0 50% 0 0;}
+    40%     {border-radius : 0 50% 0 0;}
+    50%     {border-radius : 50% 0 0 0;}
+    90%     {border-radius : 50% 0 0 0;}
+    to      {border-radius : 0 50% 0 0;}
+}

@@ -1,5 +1,4 @@
 <?php
-
     // Get data from BackOffice
     $uptitle = \get_field('_hp_hero_uptitle');
     $title = \get_field('_hp_hero_title');
@@ -38,16 +37,6 @@
         $link_target = '';
     }
 
-    if(!empty($link_news)) {
-        $link_news_url = $link_news['url'];
-        $link_news_title = $link_news['title'];
-        $link_news_target = $link_news['target'];
-    } else {
-        $link_news_url = '';
-        $link_news_title = '';
-        $link_news_target = '';
-    }
-
     if(!empty($link_video)) {
         $link_video_url = $link_video['url'];
         $link_video_title = $link_video['title'];
@@ -74,18 +63,10 @@
         'link_title' => $link_title,
         'link_target' => $link_target,
 
-        'link_news_url' => $link_news_url,
-        'link_news_title' => $link_news_title,
-        'link_news_target' => $link_news_target,
-
         'link_video_url' => $link_video_url,
         'link_video_title' => $link_video_title,
         'link_video_target' => $link_video_target,
 
         'src' => $src,
     ];
-
-    var_dump($datas);
-    
-    include(get_template_directory().'/template-parts/homepage/hero.php');
 ?>

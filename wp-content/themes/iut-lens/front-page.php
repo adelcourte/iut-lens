@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-	<head>
-	</head>
-	<body>
-		<?php get_template_part('data-managers/homepage/Hero'); ?>
-		<?php get_template_part('data-managers/homepage/Mot'); ?>
-		<?php get_template_part('data-managers/homepage/Etu'); ?>
-	</body>
-</html>
+<?php get_header(); ?>
+
+<?php get_template_part('template-parts/homepage/hero'); ?>
+<?php get_template_part('template-parts/homepage/education'); ?>
+<?php get_template_part('template-parts/homepage/speech'); ?>
+<?php get_template_part('template-parts/homepage/others'); ?>
