@@ -18,24 +18,21 @@
         <?php if(!empty($fields)) : ?>
             <?php foreach($fields as $item) : ?>
                 <div class="column-4 card-field--container mgt-5 mgh-0_5">
-                    <div class="card-field flex layout-column height-20">
+                    <div class="card-field flex layout-column height-20 bd-1-gray_lighter">
                         <div class="card-field__header" style="background-image: url('<?=wp_get_attachment_image_url($item['image_id']); ?>;">
-                            <span class="card-field__header__title"><?=$item['title']; ?></span>
-                            <div class="card-field__header__overlay" style="background-color: <?=$item['color']; ?>;"></div>
+                            <div class="card-field__header__overlay"></div>
                         </div>
-                        <div class="flex layout-column pg-1_5">
-                            <span class="title fz-16 mgb-0_5" style="color: <?=$item['color']; ?>;"><?=$item['uptitle']; ?></span>
+                        <div class="flex grow-1 layout-column pg-1_5">
+                            <span class="title title--small mgb-0_5" style="color: <?=$item['color']; ?>;"><?=$item['uptitle']; ?></span>
                             <h3 class="title mgb-1"><?=$item['title']; ?></h3>
-                            <p><?=$item['content']; ?></p>
+                            <p class="mgb-2"><?=$item['content']; ?></p>
+                            <?php if(!empty($item['link'])) : ?>
+                                <a href="<?=$item['link']['url']; ?>" target="<?=$item['link']['target']; ?>" class="link-arrow size-fit mgt-auto"><?=$item['link']['title']; ?></a>
+                            <?php endif;?>
                         </div>
                     </div>
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
-        <?php if(!empty($link_url)) : ?>
-            <div class="column-12 align-center-center mgt-5">
-                <a href="<?=$link_url; ?>" target="<?=$link_target; ?>" class="link-arrow size-fit"><?=$link_title; ?></a>
-            </div>
-        <?php endif;?>
     </div>
 </section>

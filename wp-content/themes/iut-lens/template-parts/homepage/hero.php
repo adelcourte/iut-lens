@@ -17,7 +17,7 @@
                 <span class="text-blue fw-500 mgb-0_5"><?=$uptitle; ?></span>
             <?php endif;?>
             <?php if(!empty($title)) : ?>
-                <h1 class="title title--bold title--huge mgb-2"><?=$title; ?></h1>
+                <h1 class="title title--bold title--extra underline underline--blue underline--left pgb-1 mgb-2"><?=$title; ?></h1>
             <?php endif;?>
             <?php if(!empty($content)) : ?>
                 <p class="mgb-2"><?=$content; ?></p>
