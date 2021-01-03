@@ -1,0 +1,32 @@
+.nav-main {
+    padding: 2.5rem 0;
+    width: 100%;
+    position: fixed;
+    z-index: 150;
+    top: 0;
+    left: 0;
+    background: #{clr(white)};
+
+    &__link {
+        color: #{clr(black)} !important;
+        font-family: "Lemon Milk Pro", sans-serif;
+        position: relative;
+
+        &:after {
+            content: "";
+            height: 0.2rem;
+            width: 0%;
+            transition: $transition;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #{clr(blue)};
+        }
+
+        &:hover {
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+}

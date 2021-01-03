@@ -54,9 +54,12 @@ $bps: (
 @import '_atoms/_icons';
 @import '_atoms/_cards';
 @import '_atoms/_underlines';
+@import '_atoms/_shadows';
+@import '_atoms/_swiper';
 
 // Molecules
 @import '_molecules/_hp_hero';
+@import '_molecules/_nav_main';
 
 html {
     font-size: 62.5%;
@@ -64,11 +67,12 @@ html {
 
 body {
     padding: 0;
+    padding-top: 10rem;
     margin: 0;
     display: flex;
     flex-direction: column;
     width: 100%;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-family: "Montserrat", sans-serif;
     color: #{clr(gray_dark)};
     line-height: 1.25;

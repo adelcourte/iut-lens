@@ -14,12 +14,27 @@ a {
     border-radius: 0.25rem;
     background: #{clr(blue)};
     transition: $transition;
+    border: 0.2rem solid #{clr(blue)};
+    font-family: "Lemon Milk Pro", sans-serif;
+
+    &--inverted {
+        background: none;
+        color: #{clr(blue)};
+
+        &:hover {
+            background: #{clr(blue)};
+            color: #{clr(white)};
+        }
+    }
 }
 
 .link-arrow {
     position: relative;
     padding-right: 7.5rem;
     transition: $transition;
+    font-weight: 500;
+    color: #{clr(black)};
+    font-family: "Lemon Milk Pro", sans-serif;
 
     &:after {
         content: url('../svg/arrow-right.svg');
@@ -32,7 +47,6 @@ a {
     }
 
     &:hover {
-        color: #{clr(black)};
         &:after {
             right: 0;
         }

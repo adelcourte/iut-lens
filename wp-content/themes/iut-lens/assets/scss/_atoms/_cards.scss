@@ -1,9 +1,9 @@
 .card-field {
     background: #{clr(white)};
-    box-shadow: 0 1.75rem 5rem #{clr(gray_lighter)};
+    //box-shadow: 0 1.75rem 5rem #{clr(gray_lighter)};
     
     &__header {
-        height: 25rem;
+        height: 20rem;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -21,18 +21,8 @@
             height: 100%;
             top: 0;
             left: 0;
-            filter: opacity(0.5);
-        }
-
-        &__title {
-            position: relative;
-            z-index: 10;
-            font-size: 10rem;
-            line-height: 1;
-            text-align: center;
-            font-weight: bold;
-            color: rgba(0, 0, 0, 0);
-            -webkit-text-stroke: 0.1rem #{clr(white)};
+            background: rgba(0, 0, 0, 0.25);
+            transition: $transition;
         }
     }
 
@@ -41,6 +31,10 @@
     
         &:hover {
             transform: translateY(-2.5rem);
+
+            .card-field__header__overlay {
+                filter: opacity(0);
+            }
         }
     }
 }
