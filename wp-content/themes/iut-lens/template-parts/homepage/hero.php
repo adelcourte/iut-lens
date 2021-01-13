@@ -10,7 +10,7 @@
  */
 ?>
 <?php include(get_template_directory().'/data-managers/homepage/Hero.php'); ?>
-<section class="height-20">
+<section class="mgb-0">
     <div class="row pgv-10">
         <div class="column-5">
             <?php if(!empty($uptitle)) : ?>

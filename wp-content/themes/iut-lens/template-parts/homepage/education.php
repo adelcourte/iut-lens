@@ -12,8 +12,8 @@
 <?php include(get_template_directory().'/data-managers/homepage/Education.php'); ?>
 <section>
     <div class="row align-center-stretch">
-        <div class="column-12">
-            <h2 class="title title--bold title--big text-center underline underline--blue underline--center pgb-1 mgb-2_5"><?=$title; ?></h2>
+        <div class="column-12 mgb-2_5">
+            <h2 class="title title--bold title--big text-center underline underline--blue underline--center pgb-1"><?=$title; ?></h2>
         </div>
         <?php if(!empty($fields)) : ?>
             <?php foreach($fields as $item) : ?>

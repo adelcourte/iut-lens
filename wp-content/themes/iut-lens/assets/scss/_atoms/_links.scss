@@ -9,13 +9,14 @@ a {
 }
 
 .button {
-    padding: 1.5rem 3rem;
+    padding: 1.25rem 2.5rem;
     color: #{clr(white)};
     border-radius: 0.25rem;
     background: #{clr(blue)};
     transition: $transition;
     border: 0.2rem solid #{clr(blue)};
     font-family: "Lemon Milk Pro", sans-serif;
+    font-size: 1.4rem;
 
     &--inverted {
         background: none;
