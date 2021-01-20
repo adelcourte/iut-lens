@@ -1,0 +1,29 @@
+section {
+    width: 100%;
+    max-width: 192rem;
+    margin: 0 auto 20rem auto;
+    position: relative;
+
+    @media screen and (max-width: $sm-breakpoint) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.full-width {
+    max-width: 100%;
+}
+
+.out-layout {
+    position: absolute;
+    top: -50%;
+    transform: translateY(50%);
+
+    &--left {
+        left: 0;
+    }
+
+    &--right {
+        right: 0;
+    }
+}

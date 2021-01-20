@@ -5,11 +5,11 @@
 # Toute modification des directives situées entre ces marqueurs sera surchargée.
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /iut-lens.local/www/
+RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /iut-lens.local/www/index.php [L]
+RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
