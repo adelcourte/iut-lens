@@ -1,7 +1,18 @@
-<?php get_header(); ?>
+<?php get_header() ?>
 
-<?php get_template_part('template-parts/homepage/hero'); ?>
-<?php get_template_part('template-parts/homepage/education'); ?>
-<?php get_template_part('template-parts/options/news'); ?>
-<?php get_template_part('template-parts/homepage/speech'); ?>
-<?php get_template_part('template-parts/homepage/others'); ?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+        <?php the_content() ?>
+
+    <?php endwhile; ?>
+
+<?php endif; ?>
+
+<?php
+
+    //get_bridge( 'theme' )->{'_c_void_HpSpeech@render'}();
+    get_bridge( 'theme' )->{'_c_void_HpFields@init'}();
+
+?>
+
+<?php get_footer() ?>
