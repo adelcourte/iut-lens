@@ -19,30 +19,56 @@ class HpFields extends Controller
         $model = new Model;
         $datas = $model->getDatas();
 
-        var_dump($datas);
+        if (!empty($datas['title'])) :
+            $title = $datas['title'];
+        else :
+            $title = '';
+        endif;
+
+        if (!empty($datas['content'])) :
+            $content = $datas['content'];
+        else :
+            $content = '';
+        endif;
+
+        if ($link = $datas['link']) :
+            $link_url = $link['url'];
+            $link_title = $link['title'];
+            $link_target = $link['target'];
+        else :
+            $link_url = '';
+            $link_title = '';
+            $link_target = '';
+        endif;
 
         $fields = [];
-        if($datas['taxonomies']) :
-            foreach($datas['taxonomies'] as $tax) :
+        if($datas['terms']) :
+            foreach($datas['terms'] as $term) :
                 $fields[] = [
-                    'color'     => get_field('_field_color', $tax->taxonomy.'_'.$tax->term_id),
-                    'name'      => $tax->name,
-                    'content'   => $tax->description,
-                    'link_url'  => get_term_link($tax),
+                    'color'     => get_field('_field_color', $term->taxonomy.'_'.$term->term_id),
+                    'diplomas'  => get_field('_field_diplomas', $term->taxonomy.'_'.$term->term_id),
+                    'title'     => $term->name,
+                    'content'   => $term->description,
+                    'link_url'  => get_term_link($term),
                 ];
             endforeach;
         endif;
 
-        var_dump($fields);
-
         $this->datas = [
-            'title' => 'hello world',
+            'title'         => $title,
+            'content'       => $content,
+            'link_url'      => $link_url,
+            'link_title'    => $link_title,
+            'link_target'   => $link_target,
+            'fields'        => $fields,
         ];
 
         $this->render($this->datas);
     }
 
     public function render($datas){
-        $this->view->show( 'homepage.fields', $datas);
+        if(!empty($datas)) :
+            $this->view->show('homepage.fields.items', $datas);
+        endif;
     }
 }

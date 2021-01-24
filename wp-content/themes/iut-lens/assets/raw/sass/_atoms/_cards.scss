@@ -1,0 +1,8 @@
+.card-field {
+    background: #{clr(white)};
+    transition: $transition;
+
+    &:hover {
+        transform: translateY(-2.5rem);
+    }
+}

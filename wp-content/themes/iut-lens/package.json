@@ -1,5 +1,5 @@
 {
-  "name": "{iut_lens}",
+  "name": "iut_lens",
   "version": "1.0.0",
   "dependencies": {
     "gulp": "4.0.2",

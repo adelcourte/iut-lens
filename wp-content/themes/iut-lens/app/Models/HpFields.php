@@ -18,13 +18,20 @@ class HpFields extends Model
     use FindTrait;
 
     public function getDatas() {
-        $tax = get_terms([
+        $title = \get_field('_hp_fields_title');
+        $content = \get_field('_hp_fields_content');
+        $link = \get_field('_hp_fields_link');
+
+        $terms = get_terms([
             'taxonomy' => 'fields',
             'hide_empty' => false,
         ]);
 
         return([
-            'taxonomies'    => $tax,
+            'title'     => $title,
+            'content'   => $content,
+            'link'      => $link,
+            'terms'     => $terms,
         ]);
     }
 }

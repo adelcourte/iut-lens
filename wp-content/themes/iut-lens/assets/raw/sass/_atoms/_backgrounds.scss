@@ -1,0 +1,22 @@
+.background-shape {
+    position: relative;
+
+    &:before {
+        content: "";
+        width: 35rem;
+        height: 35rem;
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 35%;
+        border-top-right-radius: 50%;
+        overflow: hidden;
+    }
+
+    &--gray {
+        &:before {
+            background-color: #{clr(gray_lighter)};
+        }
+    }
+}

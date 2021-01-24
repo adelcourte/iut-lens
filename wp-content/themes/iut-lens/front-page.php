@@ -10,8 +10,7 @@
 
 <?php
 
-    //get_bridge( 'theme' )->{'_c_void_HpSpeech@render'}();
-    get_bridge( 'theme' )->{'_c_void_HpFields@init'}();
+    get_bridge('theme')->{'_c_void_HpFields@init'}();
 
 ?>
 
