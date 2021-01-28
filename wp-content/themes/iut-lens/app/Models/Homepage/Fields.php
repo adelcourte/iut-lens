@@ -1,6 +1,6 @@
 <?php
 
-namespace IUT_Lens\Models;
+namespace IUT_Lens\Models\Homepage;
 
 use WPMVC\MVC\Traits\FindTrait;
 use WPMVC\MVC\Models\PostModel as Model;
@@ -13,24 +13,20 @@ use WPMVC\MVC\Models\PostModel as Model;
  * @package iut_lens
  * @version 1.0.0
  */
-class HpFields extends Model
+class Fields extends Model
 {
     use FindTrait;
 
     public function getDatas() {
-        $title = \get_field('_hp_fields_title');
-        $content = \get_field('_hp_fields_content');
-        $link = \get_field('_hp_fields_link');
-
         $terms = get_terms([
             'taxonomy' => 'fields',
             'hide_empty' => false,
         ]);
 
         return([
-            'title'     => $title,
-            'content'   => $content,
-            'link'      => $link,
+            'title'     => \get_field('_hp_fields_title') ? \get_field('_hp_fields_title') : '',
+            'content'   => \get_field('_hp_fields_content') ? \get_field('_hp_fields_content') : '',
+            'link'      => \get_field('_hp_fields_link') ? \get_field('_hp_fields_link') : '',
             'terms'     => $terms,
         ]);
     }

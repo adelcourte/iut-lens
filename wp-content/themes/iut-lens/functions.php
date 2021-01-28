@@ -10,13 +10,24 @@
 //------------------------------------------------------------
 require_once( __DIR__ . '/app/Boot/bootstrap.php' );
 
-// Ajouter la prise en charge des images mises en avant
+
+
+
+// Add thumbnails support
 add_theme_support( 'post-thumbnails' );
 
-// Ajouter automatiquement le titre du site dans l'en-tête du site
+
+
+
+
+// Add site title in site "head"
 add_theme_support( 'title-tag' );
 
-// Pages d'option
+
+
+
+
+// Options page
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page([
         'page_title' => __('Réglages du thème IUT Lens'),
@@ -29,7 +40,11 @@ if( function_exists('acf_add_options_page') ) {
     ]);
 }
 
-// Formations
+
+
+
+
+// Courses
 \register_post_type('courses', [
     'labels'                => [
         'name'                  => __('Formations', 'iut_lens'),
@@ -72,7 +87,11 @@ if( function_exists('acf_add_options_page') ) {
     ],
 ]);
 
-// Pôles
+
+
+
+
+// Fields
 register_taxonomy('fields', ['courses'], [
     'hierarchical'          => false,
     'public'                => true,
@@ -117,3 +136,13 @@ register_taxonomy('fields', ['courses'], [
         'slug' => __('poles', 'iut_lens'),
     ],
 ]);
+
+
+
+
+
+// Remove editor from pages
+add_action('admin_init', 'remove_textarea');
+function remove_textarea() {
+    remove_post_type_support( 'page', 'editor' );
+}

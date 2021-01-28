@@ -2,7 +2,7 @@
 
 namespace IUT_Lens\Controllers;
 
-use IUT_Lens\Models\HpFields as Model;
+use IUT_Lens\Models\Homepage\Fields as Model;
 use WPMVC\MVC\Controller;
 
 /**
@@ -18,33 +18,28 @@ class HpFields extends Controller
     public function init(){
         $model = new Model;
         $datas = $model->getDatas();
+        $this->datas = [];
 
-        if (!empty($datas['title'])) :
-            $title = $datas['title'];
-        else :
-            $title = '';
-        endif;
 
-        if (!empty($datas['content'])) :
-            $content = $datas['content'];
-        else :
-            $content = '';
-        endif;
+        
+        if (!empty($datas['title'])) {
+            $this->datas['title'] = $datas['title'];
+        }
 
-        if ($link = $datas['link']) :
-            $link_url = $link['url'];
-            $link_title = $link['title'];
-            $link_target = $link['target'];
-        else :
-            $link_url = '';
-            $link_title = '';
-            $link_target = '';
-        endif;
+        if (!empty($datas['content'])) {
+            $this->datas['content'] = $datas['content'];
+        }
 
-        $fields = [];
+        if (!empty($datas['link'])) {
+            $this->datas['link_url'] = $datas['link']['url'];
+            $this->datas['link_target'] = $datas['link']['target'];
+            $this->datas['link_title'] = $datas['link']['title'];
+        }
+
+        $this->datas['fields'] = [];
         if($datas['terms']) :
             foreach($datas['terms'] as $term) :
-                $fields[] = [
+                $this->datas['fields'][] = [
                     'color'     => get_field('_field_color', $term->taxonomy.'_'.$term->term_id),
                     'diplomas'  => get_field('_field_diplomas', $term->taxonomy.'_'.$term->term_id),
                     'title'     => $term->name,
@@ -53,15 +48,6 @@ class HpFields extends Controller
                 ];
             endforeach;
         endif;
-
-        $this->datas = [
-            'title'         => $title,
-            'content'       => $content,
-            'link_url'      => $link_url,
-            'link_title'    => $link_title,
-            'link_target'   => $link_target,
-            'fields'        => $fields,
-        ];
 
         $this->render($this->datas);
     }
