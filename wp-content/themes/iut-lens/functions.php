@@ -73,7 +73,7 @@ if( function_exists('acf_add_options_page') ) {
     'hierarchical'          => false,
     'show_ui'               => true,
     'show_in_nav_menus'     => true,
-    'supports'              => ['title', 'thumbnail'],
+    'supports'              => ['title', 'thumbnail', 'excerpt'],
     'has_archive'           => true,
     'rewrite'               => true,
     'query_var'             => true,
@@ -145,4 +145,12 @@ register_taxonomy('fields', ['courses'], [
 add_action('admin_init', 'remove_textarea');
 function remove_textarea() {
     remove_post_type_support( 'page', 'editor' );
+}
+
+// Remove sections from articles
+add_action('admin_init', 'remove_articles');
+function remove_articles() {
+    remove_post_type_support( 'post', 'author' );
+    remove_post_type_support( 'post', 'comments' );
+    remove_post_type_support( 'post', 'trackbacks' );
 }

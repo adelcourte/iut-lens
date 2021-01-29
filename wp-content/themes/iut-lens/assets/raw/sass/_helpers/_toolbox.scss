@@ -81,7 +81,7 @@
 
 
         // Font sizes
-        $font-sizes: (15, 16, 18, 20);
+        $font-sizes: (14, 15, 16, 18, 20);
         @each $fz in reverse($font-sizes){
             @include selector('.fz-#{str-replace(inspect($fz), '.', '_')}', $bp_v){ font-size: (($fz / 10) * 1rem) !important; }
         }
@@ -92,4 +92,20 @@
             @include selector('.fw-#{str-replace(inspect($fw), '.', '_')}', $bp_v){ font-weight: $fw !important; }
         }
     }
+}
+
+.content-empty {
+    content: "";
+}
+
+.pgb-35-percent {
+    padding-bottom: 35%;
+}
+
+.pgb-50-percent {
+    padding-bottom: 50%;
+}
+
+.pgb-65-percent {
+    padding-bottom: 65%;
 }

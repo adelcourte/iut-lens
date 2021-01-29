@@ -2,7 +2,7 @@
 
 namespace IUT_Lens\Controllers;
 
-use IUT_Lens\Models\Homepage\Fields as Model;
+use IUT_Lens\Models\HpFields as Model;
 use WPMVC\MVC\Controller;
 
 /**

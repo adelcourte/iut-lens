@@ -76,8 +76,21 @@ body {
     color: #{clr(gray_dark)};
     line-height: 1.25;
     background-color: #{clr(body_background)};
+
+    @media screen and (max-width: $sm-breakpoint) {
+      font-size: 1.8rem;
+    }
 }
 
 * {
   box-sizing: border-box;
+  display: block;
+}
+
+.xdebug-var-dump {
+  display: inline-block;
+
+  * {
+    display: inline-block;
+  }
 }

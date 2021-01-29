@@ -1,6 +1,16 @@
-<div class="section background-shape background-shape--gray">
+<?php
+/**
+ * homepage.fileds.items view.
+ * WordPress MVC view.
+ *
+ * @author Antoine Delcourte <antoine.delcourte@gmail.com>
+ * @package iut_lens
+ * @version 1.0.0
+ */
+?>
+<section class="background-shape background-shape--gray">
     <div class="row align-spacebetween-center">
-        <div class="column-3">
+        <div class="column-12 md-column-3 mgb-2_5 md-mgb-0">
             <?php if(!empty($title)) : ?>
                 <span class="title--big title--extrabold mgb-0_75 text-black"><?=$title; ?></span>
             <?php endif; ?>
@@ -11,12 +21,12 @@
                 <a href="<?=$link_url; ?>" target="<?=$link_target; ?>" class="button button--blue button--blue--shadow"><?=$link_title; ?></a>
             <?php endif; ?>
         </div>
-        <div class="column-7 layout-row layout-wrap align-spacebetween-stretch">
-            <?php if(!empty($fields)) :
-                foreach($fields as $field) :
+        <?php if(!empty($fields)) : ?>
+            <div class="column-12 md-column-7 layout-row layout-wrap align-spacebetween-stretch">
+                <?php foreach($fields as $field) :
                     theme_view('homepage.fields.item', $field);
-                endforeach;
-            endif; ?>
-        </div>
+                endforeach; ?>
+            </div>
+        <?php endif; ?>
     </div>
-</div>
+</section>
