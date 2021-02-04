@@ -50,8 +50,9 @@ a {
     font-weight: 500;
     color: #{clr(black)};
     font-family: 'Manrope', sans-serif;
+    font-weight: bold;
 
-    img {
+    svg {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -61,8 +62,10 @@ a {
     }
 
     &:hover {
-        img {
-            transform: translateY(-50%) translateX(1rem);
+        cursor: pointer;
+        
+        svg {
+            transform: translateY(-50%) translateX(0.75rem);
         }
     }
 

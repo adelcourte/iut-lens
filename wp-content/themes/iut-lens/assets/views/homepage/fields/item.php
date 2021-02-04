@@ -4,18 +4,26 @@
         <div class="field-circles__blue"></div>
     </div>
     <?php if(!empty($diplomas)) : ?>
-        <span class="mgb-0_5 text-gray_light"><?=$diplomas; ?></span>
+        <h3 class="mgb-0_5 text-gray_light"><?=$diplomas; ?></h3>
     <?php endif; ?>
     <?php if(!empty($title)) : ?>
-        <span class="title--bold title--small text-black mgb-1 fz-18"><?=$title; ?></span>
+        <?php if(!empty($link_url)) : ?>
+            <a href="<?=$link_url; ?>">
+                <h2 class="title--bold title--small text-black mgb-1 fz-18"><?=$title; ?></h2>
+            </a>
+        <?php else : ?>
+            <h2 class="title--bold title--small text-black mgb-1 fz-18"><?=$title; ?></h2>
+        <?php endif; ?>
     <?php endif; ?>
     <?php if(!empty($content)) : ?>
         <p class="text-center mgb-2 fz-15"><?=$content; ?></p>
     <?php endif; ?>
     <?php if(!empty($link_url)) : ?>
-        <a href="<?=$link_url; ?>" class="link-arrow--blue mgt-auto">
+        <span data-fl="<?=base64_encode(esc_url($link_url)); ?>" class="link-arrow--blue mgt-auto">
             Découvrir
-            <img src="<?=get_template_directory_uri(); ?>/assets/svg/arrow-right.svg" alt="icon_arrow">
-        </a>
+            <svg class="icon">
+                <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow"></use>
+            </svg>
+        </span>
     <?php endif; ?>
 </div>
