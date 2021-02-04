@@ -20,8 +20,8 @@
                     <div class="size-100 height-20 bg-white">
                         <div class="pgv-1_5 pgh-2">
                             <span class="fz-14 text-gray mgb-0_25"><?=get_the_date(); ?></span>
-                            <span class="title title--bold title--small mgb-0_75"><?=get_the_title(); ?></span>
-                            <?=get_the_excerpt(); ?>
+                            <span class="title title--bold title--small mgb-1"><?=get_the_title(); ?></span>
+                            <p><?=get_the_excerpt(); ?></p>
                         </div>
                     </div>
                 </div>

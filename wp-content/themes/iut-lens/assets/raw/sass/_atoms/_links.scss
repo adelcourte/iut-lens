@@ -43,7 +43,7 @@ a {
 
 }
 
-.link-arrow {
+*[class*="link-arrow"]{
     position: relative;
     padding-right: 4rem;
     transition: $transition;
@@ -51,8 +51,7 @@ a {
     color: #{clr(black)};
     font-family: 'Manrope', sans-serif;
 
-    &:after {
-        content: url('../svg/arrow-right.svg');
+    img {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -62,9 +61,13 @@ a {
     }
 
     &:hover {
-        &:after {
+        img {
             transform: translateY(-50%) translateX(1rem);
         }
+    }
+
+    &[class*="--blue"] {
+        color: clr(blue);
     }
 }
 

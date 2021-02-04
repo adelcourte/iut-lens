@@ -178,11 +178,3 @@
         @include selector('.height-auto', $value){ height: auto !important; max-height: auto !important; }
     }
 }
-
-.p-relative {
-    position: relative;
-}
-
-.p-absolute {
-    position: absolute;
-}

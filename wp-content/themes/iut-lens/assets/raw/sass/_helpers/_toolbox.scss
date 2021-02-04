@@ -91,6 +91,82 @@
         @each $fw in reverse($font-weight){
             @include selector('.fw-#{str-replace(inspect($fw), '.', '_')}', $bp_v){ font-weight: $fw !important; }
         }
+
+
+
+        // Positions
+        @include selector('.p-absolute', $bp_v){ position: absolute !important; }
+        @include selector('.p-relative', $bp_v){ position: relative !important; }
+
+        $values: ( 0, 4.5, 5, 10, 7.5, 10, 20, 22.5, "auto" );
+        @each $v in reverse($values){
+            $gap: if(type-of($v) == 'number', $vr * $v, #{$v});
+
+            @include selector('.top-#{str-replace(inspect($v), '.', '_')}', $bp_v){ top: $gap !important; }
+            @include selector('.right-#{str-replace(inspect($v), '.', '_')}', $bp_v){ right: $gap !important; }
+            @include selector('.bottom-#{str-replace(inspect($v), '.', '_')}', $bp_v){ bottom: $gap !important; }
+            @include selector('.left-#{str-replace(inspect($v), '.', '_')}', $bp_v){ left: $gap !important; }
+
+            @include selector('.bottom-minus-#{str-replace(inspect($v), '.', '_')}', $bp_v){ bottom: -#{$gap} !important; }
+            @include selector('.right-minus-#{str-replace(inspect($v), '.', '_')}', $bp_v){ right: -#{$gap} !important; }
+        }
+
+        @for $i from 0 through 100 {
+            @include selector('.top-#{str-replace(inspect($i), '.', '_')}-percent', $bp_v){ top: ($i * 1%) !important; }
+            @include selector('.right-#{str-replace(inspect($i), '.', '_')}-percent', $bp_v){ right: $i * 1% !important; }
+            @include selector('.bottom-#{str-replace(inspect($i), '.', '_')}-percent', $bp_v){ bottom: $i * 1% !important; }
+            @include selector('.left-#{str-replace(inspect($i), '.', '_')}-percent', $bp_v){ left: $i * 1% !important; }
+        }
+
+        @for $z from 0 through 100 {
+            @include selector('.z-#{str-replace(inspect($z), '.', '_')}', $bp_v){ z-index: $z !important; }
+            @include selector('.z-minus#{str-replace(inspect($z), '.', '_')}', $bp_v){ z-index: -#{$z} !important; }
+        }
+
+        @include selector('.left-50-percent', $bp_v){ left: 50% !important; }
+        @include selector('.top-50-percent', $bp_v){ top: 50% !important; }
+
+        // Translate
+        @include selector('.transX-50', $bp_v){ transform: translateX(-50%) !important; }
+        @include selector('.transY-50', $bp_v){ transform: translateY(-50%) !important; }
+        @include selector('.transXY-50', $bp_v){ transform: translateX(-50%) translateY(-50%) !important; }
+        @include selector('.transXY-0', $bp_v){ transform: none !important; }
+
+        // Translate inverted
+        @include selector('.transX-50-invert', $bp_v){ transform: translateX(50%) !important; }
+        @include selector('.transY-50-invert', $bp_v){ transform: translateY(50%) !important; }
+        @include selector('.transXY-50-invert', $bp_v){ transform: translateX(50%) translateY(50%) !important; }
+
+        // Translate mixed
+        @include selector('.transX-50-transY-50-invert', $bp_v){ transform: translateX(-50%) translateY(50%) !important; }
+
+        @for $z from 0 through 100 {
+            @include selector('.z-#{str-replace(inspect($z), '.', '_')}', $bp_v){ z-index: $z !important; }
+            @include selector('.z-minus#{str-replace(inspect($z), '.', '_')}', $bp_v){ z-index: -#{$z} !important; }
+        }
+
+        @include selector('.left-50-percent', $bp_v){ left: 50% !important; }
+        @include selector('.top-50-percent', $bp_v){ top: 50% !important; }
+
+        // Translate
+        @include selector('.transX-50', $bp_v){ transform: translateX(-50%) !important; }
+        @include selector('.transY-50', $bp_v){ transform: translateY(-50%) !important; }
+        @include selector('.transXY-50', $bp_v){ transform: translateX(-50%) translateY(-50%) !important; }
+        @include selector('.transXY-0', $bp_v){ transform: none !important; }
+
+        // Translate inverted
+        @include selector('.transX-50-invert', $bp_v){ transform: translateX(50%) !important; }
+        @include selector('.transY-50-invert', $bp_v){ transform: translateY(50%) !important; }
+        @include selector('.transXY-50-invert', $bp_v){ transform: translateX(50%) translateY(50%) !important; }
+
+        // Translate mixed
+        @include selector('.transX-50-transY-50-invert', $bp_v){ transform: translateX(-50%) translateY(50%) !important; }
+
+
+
+        // Overflows
+        @include selector('.ovf-hidden', $bp_v){ overflow: hidden !important; }
+        @include selector('.ovf-visible', $bp_v){ overflow: visible !important; }
     }
 }
 
