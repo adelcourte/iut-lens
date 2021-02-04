@@ -1,5 +1,5 @@
 /**
- * functions JavaScript asset.
+ * Fake Links asset.
  *
  * @author Antoine Delcourte <antoine.delcourte@gmail.com>
  * @package {iut_lens}

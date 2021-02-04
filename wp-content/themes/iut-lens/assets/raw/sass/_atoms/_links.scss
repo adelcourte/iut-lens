@@ -18,18 +18,18 @@ a {
     width: fit-content;
 
     &--blue {
-        background: #{clr(blue)};
-        border: 0.2rem solid #{clr(blue)};
-        color: #{clr(white)};
+        background: clr(blue);
+        border: 0.2rem solid clr(blue);
+        color: clr(white);
 
         &:hover {
-            background: #{clr(blue_dark)};
-            border: 0.2rem solid #{clr(blue_dark)};
+            background: clr(blue_dark);
+            border: 0.2rem solid clr(blue_dark);
         }
 
         &--inverted {
-            background: #{clr(white)};;
-            color: #{clr(blue)};
+            background: clr(white);;
+            color: clr(blue);
         }
 
         &--shadow {
@@ -40,7 +40,6 @@ a {
             }
         }
     }
-
 }
 
 *[class*="link-arrow"]{
@@ -48,7 +47,7 @@ a {
     padding-right: 4rem;
     transition: $transition;
     font-weight: 500;
-    color: #{clr(black)};
+    color: clr(black);
     font-family: 'Manrope', sans-serif;
     font-weight: bold;
 
@@ -63,7 +62,7 @@ a {
 
     &:hover {
         cursor: pointer;
-        
+
         svg {
             transform: translateY(-50%) translateX(0.75rem);
         }
@@ -97,6 +96,7 @@ a {
         flex-direction: column;
         text-align: center;
         font-weight: bolder;
+        align-items: center;
     }
 
     &--blue {

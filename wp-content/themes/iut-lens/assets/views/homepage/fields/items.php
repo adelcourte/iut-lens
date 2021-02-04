@@ -12,7 +12,7 @@
     <div class="row align-spacebetween-center">
         <div class="column-12 md-column-3 mgb-2_5 md-mgb-0">
             <?php if(!empty($title)) : ?>
-                <span class="title--big title--extrabold mgb-0_75 text-black"><?=$title; ?></span>
+                <span class="title--big title--extrabold mgb-0_75"><?=$title; ?></span>
             <?php endif; ?>
             <?php if(!empty($content)) : ?>
                 <p class="mgb-1_5"><?=$content; ?></p>

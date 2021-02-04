@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <symbol id="icon-arrow" viewBox="0 0 24 16">
-        <path id="arrow" d="M75.537,56l-1.2,1.2,5.947,5.942L59.549,62.8V64.51l20.731.347L74.335,70.8l1.2,1.2,6.8-6.8.005.007,1.2-1.2Z" transform="translate(-59.549 -56)" fill="#4a4cff" fill-rule="evenodd"/>
+        <path id="arrow" d="M75.537,56l-1.2,1.2,5.947,5.942L59.549,62.8V64.51l20.731.347L74.335,70.8l1.2,1.2,6.8-6.8.005.007,1.2-1.2Z" transform="translate(-59.549 -56)" fill="inherit" fill-rule="evenodd"/>
     </symbol>
 </svg>

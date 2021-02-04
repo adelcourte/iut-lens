@@ -165,7 +165,7 @@
 
 
         // Width
-        @for $i from 1 through 100{
+        @for $i from 1 through 200{
             @include selector('.size-#{$i}', $value){ width: $i * 1% !important; max-width: $i * 1% !important; }
         }
         @include selector('.size-auto', $value){ width: auto !important; max-width: auto !important; }

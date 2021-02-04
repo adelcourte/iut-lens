@@ -9,10 +9,10 @@
     <?php if(!empty($title)) : ?>
         <?php if(!empty($link_url)) : ?>
             <a href="<?=$link_url; ?>">
-                <h2 class="title--bold title--small text-black mgb-1 fz-18"><?=$title; ?></h2>
+                <h2 class="title--bold title--small mgb-1"><?=$title; ?></h2>
             </a>
         <?php else : ?>
-            <h2 class="title--bold title--small text-black mgb-1 fz-18"><?=$title; ?></h2>
+            <h2 class="title--bold title--small mgb-1"><?=$title; ?></h2>
         <?php endif; ?>
     <?php endif; ?>
     <?php if(!empty($content)) : ?>
@@ -21,7 +21,7 @@
     <?php if(!empty($link_url)) : ?>
         <span data-fl="<?=base64_encode(esc_url($link_url)); ?>" class="link-arrow--blue mgt-auto">
             Découvrir
-            <svg class="icon">
+            <svg class="icon icon--blue">
                 <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow"></use>
             </svg>
         </span>

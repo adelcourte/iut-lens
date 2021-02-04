@@ -59,7 +59,6 @@ $bps: (
 @import '_atoms/_backgrounds';
 
 // Molecules
-@import '_molecules/_hp_hero';
 @import '_molecules/_nav_main';
 
 html {
@@ -73,9 +72,9 @@ body {
     flex-direction: column;
     font-size: 1.6rem;
     font-family: 'Manrope', sans-serif;
-    color: #{clr(gray_dark)};
+    color: clr(gray_dark);
     line-height: 1.25;
-    background-color: #{clr(body_background)};
+    background-color: clr(body_background);
 
     @media screen and (max-width: $sm-breakpoint) {
       font-size: 1.8rem;

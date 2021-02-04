@@ -55,6 +55,15 @@
             @include selector('.h-bg-#{$c_name}', $bp_v){ &:hover{ background-color: $c_hex !important; } }
         }
 
+        // Shadows
+        @each $color in $colors {
+            $c_name: nth($color, 1);
+            $c_hex: nth($color, 2);
+    
+            //@include selector('.shadow-#{$c_name}-faded', $bp_v){ box-shadow: 0.25rem 0.75rem 2.5rem #{$c_hex)}66 !important; }
+            @include selector('.shadow-#{$c_name}-faded', $bp_v){ box-shadow: 0 1.75rem 5rem #{$c_hex)}66 !important; }
+        }
+
 
 
         // Borders
@@ -69,6 +78,16 @@
                 @include selector('.bdb-#{$i}-#{$c_name}', $bp_v){ border-bottom: ($i * 1px) solid $c_hex; }
                 @include selector('.bdl-#{$i}-#{$c_name}', $bp_v){ border-left: ($i * 1px) solid $c_hex; }
                 }
+        }
+
+        // Border radius
+        @for $i from 1 through 100{
+            @include selector('.radius-#{$i}', $bp_v){ border-radius: $i * 1% !important; }
+
+            @include selector('.radius-tr-#{$i}', $bp_v){ border-top-right-radius: $i * 1% !important; }
+            @include selector('.radius-br-#{$i}', $bp_v){ border-bottom-right-radius: $i * 1% !important; }
+            @include selector('.radius-bl-#{$i}', $bp_v){ border-bottom-left-radius: $i * 1% !important; }
+            @include selector('.radius-tl-#{$i}', $bp_v){ border-top-left-radius: $i * 1% !important; }
         }
 
 
@@ -98,7 +117,7 @@
         @include selector('.p-absolute', $bp_v){ position: absolute !important; }
         @include selector('.p-relative', $bp_v){ position: relative !important; }
 
-        $values: ( 0, 4.5, 5, 10, 7.5, 10, 20, 22.5, "auto" );
+        $values: ( 0, 2.5, 4.5, 5, 10, 7.5, 10, 20, 22.5, "auto" );
         @each $v in reverse($values){
             $gap: if(type-of($v) == 'number', $vr * $v, #{$v});
 

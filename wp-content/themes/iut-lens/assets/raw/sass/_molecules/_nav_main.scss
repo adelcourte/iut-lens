@@ -5,10 +5,10 @@
     z-index: 150;
     top: 0;
     left: 0;
-    background: #{clr(white)};
+    background: clr(white);
 
     &__link {
-        color: #{clr(black)} !important;
+        color: clr(black) !important;
         font-family: 'Manrope', sans-serif;
         position: relative;
         font-size: 1.4rem;
@@ -21,7 +21,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            background: #{clr(blue)};
+            background: clr(blue);
         }
 
         &:hover {

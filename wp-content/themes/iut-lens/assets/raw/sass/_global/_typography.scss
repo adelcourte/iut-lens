@@ -6,34 +6,49 @@ p {
     &:last-of-type {
         margin: 0;
     }
+
+    &.small {
+        font-size: 1.4rem;
+    }
 }
 
-.text-small {
-    font-size: 1.4rem;
+span {
+    &.small {
+        font-size: 1.4rem;
+    }
 }
 
 // Titles
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    font-weight: 400;
 }
 
 .title {
     font-size: 2.4rem;
     font-weight: 500;
-    font-family: 'Manrope', sans-serif;
     color: clr(black);
     line-height: 1.1;
 
     &--extrasmall {
         font-size: 1.6rem;
+        font-weight: 500;
+        color: clr(black);
+        line-height: 1.1;
     }
 
     &--small {
         font-size: 2rem;
+        font-weight: 500;
+        color: clr(black);
+        line-height: 1.1;
     }
 
     &--big {
         font-size: 3.6rem;
+        font-weight: 500;
+        color: clr(black);
+        line-height: 1.1;
 
         @media screen and (max-width: $sm-breakpoint) {
             font-size: 2.8rem;
@@ -42,6 +57,9 @@ h1, h2, h3, h4, h5, h6 {
 
     &--extra {
         font-size: 5rem;
+        font-weight: 500;
+        color: clr(black);
+        line-height: 1.1;
 
         @media screen and (max-width: $sm-breakpoint) {
             font-size: 3.6rem;
@@ -50,10 +68,16 @@ h1, h2, h3, h4, h5, h6 {
 
     &--huge {
         font-size: 7.5rem;
+        font-weight: 500;
+        color: clr(black);
+        line-height: 1.1;
     }
 
     &--giant {
         font-size: 10rem;
+        font-weight: 500;
+        color: clr(black);
+        line-height: 1.1;
     }
     
     &--bold {

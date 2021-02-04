@@ -29,12 +29,12 @@
     }
 
     &__blue {
-        background: #{clr(blue)};
+        background: clr(blue);
         transform: translateX(calc(-50% + 1.25rem)) translateY(-50%);
     }
 
     &__color {
-        background: #{clr(blue)}66;
+        background: clr(blue)66;
         transform: translateX(calc(-50% - 1.25rem)) translateY(-50%);
     }
 }
