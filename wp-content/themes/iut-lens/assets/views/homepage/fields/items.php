@@ -1,6 +1,6 @@
 <?php
 /**
- * homepage.fileds.items view.
+ * homepage.fields.items view.
  * WordPress MVC view.
  *
  * @author Antoine Delcourte <antoine.delcourte@gmail.com>
@@ -9,16 +9,16 @@
  */
 ?>
 <section class="background-shape background-shape--gray">
-    <div class="row align-spacebetween-center">
+    <div class="row align-spacebetween-start">
         <div class="column-12 md-column-3 mgb-2_5 md-mgb-0">
             <?php if(!empty($title)) : ?>
-                <span class="title--big title--extrabold mgb-0_75"><?=$title; ?></span>
+                <span class="title--big--bolder mgb-0_75"><?=$title; ?></span>
             <?php endif; ?>
             <?php if(!empty($content)) : ?>
                 <p class="mgb-1_5"><?=$content; ?></p>
             <?php endif; ?>
             <?php if(!empty($link_url)) : ?>
-                <a href="<?=$link_url; ?>" target="<?=$link_target; ?>" class="button button--blue button--blue--shadow"><?=$link_title; ?></a>
+                <a href="<?=$link_url; ?>" target="<?=$link_target; ?>" class="button--blue--shadow"><?=$link_title; ?></a>
             <?php endif; ?>
         </div>
         <?php if(!empty($fields)) : ?>

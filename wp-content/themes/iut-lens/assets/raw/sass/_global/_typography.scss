@@ -24,67 +24,49 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
 
-.title {
+*[class*="title"] {
     font-size: 2.4rem;
-    font-weight: 500;
+    font-weight: 700;
     color: clr(black);
     line-height: 1.1;
 
-    &--extrasmall {
+    &[class*="--smaller"] {
         font-size: 1.6rem;
-        font-weight: 500;
-        color: clr(black);
-        line-height: 1.1;
     }
 
-    &--small {
+    &[class*="--small"] {
         font-size: 2rem;
-        font-weight: 500;
-        color: clr(black);
-        line-height: 1.1;
     }
 
-    &--big {
+    &[class*="--big"] {
         font-size: 3.6rem;
-        font-weight: 500;
-        color: clr(black);
-        line-height: 1.1;
 
         @media screen and (max-width: $sm-breakpoint) {
             font-size: 2.8rem;
         }
     }
 
-    &--extra {
+    &[class*="--extra"] {
         font-size: 5rem;
-        font-weight: 500;
-        color: clr(black);
-        line-height: 1.1;
 
         @media screen and (max-width: $sm-breakpoint) {
             font-size: 3.6rem;
         }
     }
 
-    &--huge {
+    &[class*="--huge"] {
         font-size: 7.5rem;
-        font-weight: 500;
-        color: clr(black);
-        line-height: 1.1;
     }
 
-    &--giant {
+    &[class*="--giant"] {
         font-size: 10rem;
-        font-weight: 500;
-        color: clr(black);
-        line-height: 1.1;
     }
     
-    &--bold {
-        font-weight: 700;
+    &[class*="--medium"] {
+        font-weight: 500;
     }
 
-    &--extrabold {
+    &[class*="--bolder"] {
         font-weight: 800;
     }
 }

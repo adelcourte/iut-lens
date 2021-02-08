@@ -8,7 +8,7 @@ a {
     }
 }
 
-.button {
+*[class*="button"] {
     padding: 1.25rem 2.5rem;
     border-radius: 0.25rem;
     transition: $transition;
@@ -17,7 +17,11 @@ a {
     font-weight: 500;
     width: fit-content;
 
-    &--blue {
+    &:hover {
+        cursor: pointer;
+    }
+
+    &[class*="--blue"] {
         background: clr(blue);
         border: 0.2rem solid clr(blue);
         color: clr(white);
@@ -27,12 +31,12 @@ a {
             border: 0.2rem solid clr(blue_dark);
         }
 
-        &--inverted {
+        &[class*="--inverted"] {
             background: clr(white);;
             color: clr(blue);
         }
 
-        &--shadow {
+        &[class*="--shadow"] {
             box-shadow: 0.25rem 0.75rem 2.5rem #{clr(blue)}66;
 
             &:hover {

@@ -1,7 +1,6 @@
-
 <?php
 /**
- * homepage.fileds.items view.
+ * news.items view.
  * WordPress MVC view.
  *
  * @author Antoine Delcourte <antoine.delcourte@gmail.com>
@@ -11,6 +10,11 @@
 ?>
 <section class="pgv-5 bg-gray_lighter full-width">
     <div class="row align-spacebetween-stretch">
+        <?php if(!empty($title)) : ?>
+            <div class="column-12 mgb-5">
+                <span class="title--big text-center"><?=$title; ?></span>
+            </div>
+        <?php endif; ?>
         <?php if($news->have_posts()) : ?>
             <?php while($news->have_posts()) : ?>
                 <?php $news->the_post(); ?>
@@ -20,7 +24,7 @@
                     <div class="size-100 height-20 bg-white">
                         <div class="pg-2 height-20 flex layout-column align-spacebetween-start">
                             <span class="fz-14 text-gray mgb-0_25"><?=get_the_date(); ?></span>
-                            <span class="title--bold title--small mgb-1"><?=get_the_title(); ?></span>
+                            <span class="title--small--bold mgb-1"><?=get_the_title(); ?></span>
                             <p class="mgb-2"><?=get_the_excerpt(); ?></p>
                             <a href="<?php get_post_permalink(); ?>" class="link-arrow--blue mgt-auto size-fit">
                                 Lire la suite

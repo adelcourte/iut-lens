@@ -154,3 +154,43 @@ function remove_articles() {
     remove_post_type_support( 'post', 'comments' );
     remove_post_type_support( 'post', 'trackbacks' );
 }
+
+
+
+
+
+// Add custom fields to author
+add_action( 'show_user_profile', 'extra_user_profile_fields' );
+add_action( 'edit_user_profile', 'extra_user_profile_fields' );
+
+function extra_user_profile_fields( $user ) { ?>
+    <h3><?php _e("Informations supplémentaires", "blank"); ?></h3>
+
+    <table class="form-table">
+        <tr>
+            <th><label for="user_job"><?php _e("Poste au sein de l'établissement"); ?></label></th>
+            <td>
+                <input type="text" name="user_job" id="user_job" class="regular-text" value="<?php echo esc_attr( get_the_author_meta( 'user_job', $user->ID ) ); ?>">
+            </td>
+        </tr>
+    </table>
+    <?php }
+
+    add_action( 'personal_options_update', 'save_extra_user_profile_fields' );
+    add_action( 'edit_user_profile_update', 'save_extra_user_profile_fields' );
+
+    function save_extra_user_profile_fields( $user_id ) {
+
+    if ( !current_user_can( 'edit_user', $user_id ) ) { return false; }
+
+    update_user_meta( $user_id, 'user_job', $_POST['user_job'] );
+}
+
+
+
+
+
+function register_my_menu() {
+    register_nav_menu('main_nav',__( 'Menu de navigation principale' ));
+}
+add_action( 'init', 'register_my_menu' );

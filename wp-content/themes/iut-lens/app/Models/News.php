@@ -19,6 +19,7 @@ class News extends Model
 
     public function getDatas() {
         return([
+            'title'   => \get_field('_news_title', 'option') ? \get_field('_news_title', 'option') : '',
             'link_single'   => \get_field('_news_link_single', 'option') ? \get_field('_news_link_single', 'option') : '',
             'link'     => \get_field('_news_link', 'option') ? \get_field('_news_link', 'option') : '',
         ]);

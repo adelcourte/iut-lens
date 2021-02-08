@@ -20,8 +20,12 @@ class News extends Controller
         $model = new Model;
         $datas = $model->getDatas();
         $this->datas = [];
+        
 
 
+        if (!empty($datas['title'])) {
+            $this->datas['title'] = $datas['title'];
+        }
         
         if (!empty($datas['link_single'])) {
             $this->datas['link_single'] = $datas['link_single'];
