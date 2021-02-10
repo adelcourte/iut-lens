@@ -19,7 +19,7 @@ class HpFields extends Model
 
     public function getDatas() {
         $terms = get_terms([
-            'taxonomy'   => 'fields',
+            'taxonomy'   => 'field',
             'hide_empty' => false,
         ]);
 
