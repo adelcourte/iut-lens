@@ -25,13 +25,13 @@
             </div>
         </div>
         <?php if($images_src[0]) : ?>
-            <div id="student_2" class="pg-7_5 content-empty p-absolute left-0 radius-tl-50 shadow-aqua-faded" style="background: #3CC8DB url('<?=$images_src[0]; ?>') no-repeat bottom/cover;"></div>
+            <div class="pg-7_5 content-empty p-absolute left-0 radius-tl-50 shadow-aqua-faded rellax" data-rellax-speed="-2" style="background: #3CC8DB url('<?=$images_src[0]; ?>') no-repeat bottom/cover;"></div>
         <?php endif; ?>
         <?php if($images_src[1]) : ?>
-            <div id="student_2" class="pg-7_5 content-empty p-absolute right-0 top-0 radius-50 shadow-orange-faded" style="background: #FD9F42 url('<?=$images_src[1]; ?>') no-repeat bottom/cover;"></div>
+            <div class="pg-7_5 content-empty p-absolute right-0 top-0 radius-50 shadow-orange-faded rellax" data-rellax-speed="-3" style="background: #FD9F42 url('<?=$images_src[1]; ?>') no-repeat bottom/cover;"></div>
         <?php endif; ?>
         <?php if($images_src[2]) : ?>
-            <div id="student_3" class="pg-7_5 content-empty p-absolute right-7_5 bottom-0 radius-br-50 shadow-purple-faded" style="background: #BE4BDB url('<?=$images_src[2]; ?>') no-repeat bottom/cover;"></div>
+            <div class="pg-7_5 content-empty p-absolute right-7_5 bottom-0 radius-br-50 shadow-purple-faded rellax" data-rellax-speed="-1" style="background: #BE4BDB url('<?=$images_src[2]; ?>') no-repeat bottom/cover;"></div>
         <?php endif; ?>
     </div>
 </section>

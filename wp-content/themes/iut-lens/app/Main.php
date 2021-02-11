@@ -20,7 +20,6 @@ class Main extends Bridge
      */
     public function init()
     {
-        $this->add_model('HpFields');
     }
     /**
      * Declaration of admin only WordPress hooks.
