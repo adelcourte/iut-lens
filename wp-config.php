@@ -61,6 +61,7 @@ define( 'AUTH_SALT',        'G0)KRf0*^<7V^VX%K=5=uG9ZPFA[_M+nnonzAm;eWg%Tzk}[:(}
 define( 'SECURE_AUTH_SALT', '5L3@=B]$T+:va/C+;8@ra}E~2SvJk,SC)V<_B#${C<_hB$9bVdf2bG;`&NlL}o2}' );
 define( 'LOGGED_IN_SALT',   '.g^J]L}l[j.m3#w]J2&N*Chsj*tsU+0}2S(MTACv>>wxjiodPSx<Iv6d*Ippz1~$' );
 define( 'NONCE_SALT',       '7$L N0bJn(i9C[d3eD&)/i>xH1:?pTo`uCX#ia?qF(1Vmiguw%Al@cJNe: ?XrW~' );
+define( 'WP_POST_REVISIONS', false );
 /**#@-*/
 
 /**
