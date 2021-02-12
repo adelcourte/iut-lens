@@ -47,7 +47,7 @@ define( 'DB_USER', 'youce1238751_1uazp' );
 define( 'DB_PASSWORD', 'IUTwebsite2021' );
 
 /** Adresse de l’hébergement MySQL. */
-define( 'DB_HOST', '185.98.131.93' )
+define( 'DB_HOST', '185.98.131.93' );
 
 /**
  * Type de collation de la base de données.
