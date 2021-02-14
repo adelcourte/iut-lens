@@ -195,8 +195,18 @@ function extra_user_profile_fields( $user ) { ?>
 
 
 
-
+// Register main menu
 function register_my_menu() {
     register_nav_menu('main_nav',__( 'Menu de navigation principale' ));
 }
 add_action( 'init', 'register_my_menu' );
+
+
+
+
+
+// Prevent wordpress from wrapping <img> inside <p> tags
+function filter_ptags_on_images($content) {
+    return preg_replace('/<p>(\s*)(<img .* \/>)(\s*)<\/p>/iU', '\2', $content);
+}
+add_filter('the_content', 'filter_ptags_on_images');
