@@ -36,7 +36,7 @@ class HpSpeech extends Controller
             $author['firstname'] = $author_data->user_firstname;
             $author['lastname'] = $author_data->user_lastname;
             $author['job'] = $author_data->user_job;
-            $author['src'] = get_avatar_url($id);
+            $author['src'] = get_avatar_url($user_id);
         }
         $this->datas['author'] = $author;
 
