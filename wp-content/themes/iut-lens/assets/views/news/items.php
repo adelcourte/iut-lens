@@ -27,7 +27,7 @@
                             <span class="title--small--bold mgb-1"><?=get_the_title(); ?></span>
                             <p class="mgb-2"><?=get_the_excerpt(); ?></p>
                             <a href="<?php get_post_permalink(); ?>" class="link-arrow--blue mgt-auto size-fit">
-                                Lire la suite
+                                <?=$link_single; ?>
                                 <svg class="icon icon--blue">
                                     <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow"></use>
                                 </svg>

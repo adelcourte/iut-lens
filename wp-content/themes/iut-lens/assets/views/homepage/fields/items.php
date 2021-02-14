@@ -9,7 +9,7 @@
  */
 ?>
 <section class="background-shape background-shape--gray">
-    <div class="row align-spacebetween-start">
+    <div class="row align-spacebetween-center">
         <div class="column-12 md-column-3 mgb-2_5 md-mgb-0">
             <?php if(!empty($title)) : ?>
                 <span class="title--big--bolder mgb-0_75"><?=$title; ?></span>

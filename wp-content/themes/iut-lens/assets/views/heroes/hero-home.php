@@ -9,7 +9,7 @@
  */
 ?>
 <section class="mgt-5">
-    <div class="row align-center-center p-relative pgt-10 pgb-15">
+    <div class="row align-center-center p-relative pgt-7_5 pgb-15">
         <div class="column-12 md-column-6 align-center-center text-center">
             <?php if(!empty($uptitle)) : ?>
                 <h1 class="title text-gray"><?=$uptitle; ?></h1>
