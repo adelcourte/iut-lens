@@ -36,4 +36,6 @@
     </section>
 <?php endwhile; ?>
 
+<?php get_bridge('theme')->{'_c_void_News@init'}(); ?>
+
 <?php get_footer() ?>

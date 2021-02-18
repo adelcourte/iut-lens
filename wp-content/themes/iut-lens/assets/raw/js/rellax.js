@@ -5,6 +5,7 @@
  * @package {iut_lens}
  * @version 1.0.0
  */
-window.onload = function() {
+window.addEventListener('load', () => {
+    console.log('hello');
     var rellax = new Rellax('.rellax');
-}
+});

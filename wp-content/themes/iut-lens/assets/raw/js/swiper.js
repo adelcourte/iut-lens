@@ -6,7 +6,6 @@
  * @version 1.0.0
  */
 window.onload = function() {
-    console.log('hello');
     var swiper = new Swiper('.swiper-speech', {
         speed: 600,
         parallax: true,

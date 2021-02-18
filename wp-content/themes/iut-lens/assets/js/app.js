@@ -30,9 +30,10 @@ window.addEventListener('load', () => {
  * @package {iut_lens}
  * @version 1.0.0
  */
-window.onload = function() {
+window.addEventListener('load', () => {
+    console.log('hello');
     var rellax = new Rellax('.rellax');
-}
+});
 /**
  * Swiper asset.
  *
@@ -41,7 +42,6 @@ window.onload = function() {
  * @version 1.0.0
  */
 window.onload = function() {
-    console.log('hello');
     var swiper = new Swiper('.swiper-speech', {
         speed: 600,
         parallax: true,

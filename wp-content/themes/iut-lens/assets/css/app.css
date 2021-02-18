@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #000000;
   line-height: 1.1; }
   *[class*="title"][class*="--smaller"] {
-    font-size: 1.6rem; }
+    font-size: 1.6rem !important; }
   *[class*="title"][class*="--small"] {
     font-size: 2rem; }
   *[class*="title"][class*="--big"] {
