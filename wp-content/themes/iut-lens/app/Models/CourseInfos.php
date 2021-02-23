@@ -21,9 +21,9 @@ class CourseInfos extends Model
         $id = \get_the_ID();
 
         return([
+            'diploma'   => \get_field('_course_infos_diploma', $id),
             'title'     => \get_field('_course_infos_title', $id),
             'entry'     => \get_field('_course_infos_entry', $id),
-            'join'      => \get_field('_course_infos_join', $id),
             'image_id'  => \get_field('_course_infos_image_id', $id),
             'content'   => \get_field('_course_infos_content', $id),
         ]);

@@ -1,13 +1,13 @@
 	</body>
-	<footer>
+	<footer id="footer">
 		<div class="row">
 			<div class="column-3">
 				<?php if($src = wp_get_attachment_url(get_field('_footer_logo_id', 'option'))) : ?>
 					<img src="<?=$src; ?>" alt="logo" class="size-25 height-auto mgb-1">
 				<?php endif; ?>
-				<?php if($coords = get_field('_footer_coords', 'option')) : ?>
+				<?php if($coords = get_field('_coords', 'option')) : ?>
 					<?php foreach($coords as $coord) : ?>
-						<span class="small mgb-0_5"><?=$coord['title']; ?></span>
+						<span class="small mgb-0_5"><?=$coord['content']; ?></span>
 					<?php endforeach; ?>
 				<?php endif; ?>
 			</div>
@@ -27,5 +27,6 @@
 				
 			</div>
 		</div>
+		<?php wp_footer(); ?>
 	</footer>
 </html>

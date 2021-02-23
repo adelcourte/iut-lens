@@ -12,10 +12,8 @@ p {
     }
 }
 
-span {
-    &.small {
-        font-size: 1.4rem;
-    }
+span.small, a.small {
+    font-size: 1.4rem;
 }
 
 // Titles

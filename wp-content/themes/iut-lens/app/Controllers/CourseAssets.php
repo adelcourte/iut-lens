@@ -30,13 +30,20 @@ class CourseAssets extends Controller
             $this->datas['content'] = $datas['content'];
         }
 
+        $id = \get_the_ID();
+        if($field = wp_get_post_terms($id, 'field')) {
+            $this->datas['field_color'] = get_field('_field_color', $field[0]->taxonomy.'_'.$field[0]->term_id);
+        }
+
+        $this->datas['anchor_id'] = 'course_assets';
+        $this->datas['anchor_title'] = 'Atouts de la formation';
+
         $this->render($this->datas);
     }
 
     public function render($datas){
         if(!empty($datas)) {
-            var_dump($datas);
-            $this->view->show('course.assets', $datas);
+            $this->view->show('course.content', $datas);
         }
     }
 }
