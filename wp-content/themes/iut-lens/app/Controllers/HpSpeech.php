@@ -30,6 +30,10 @@ class HpSpeech extends Controller
             $this->datas['list'] = $datas['list'];
         }
 
+        if (!empty($datas['quote'])) {
+            $this->datas['quote'] = $datas['quote'];
+        }
+
         $author = [];
         if ($user_id = $datas['author_id']) {
             $author_data = get_userdata($user_id);

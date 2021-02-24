@@ -1,6 +1,6 @@
 <?php
 /**
- * homepage.fields.items view.
+ * homepage.departments.items view.
  * WordPress MVC view.
  *
  * @author Antoine Delcourte <antoine.delcourte@gmail.com>
@@ -21,10 +21,10 @@
                 <a href="<?=$link_url; ?>" target="<?=$link_target; ?>" class="button--blue--shadow"><?=$link_title; ?></a>
             <?php endif; ?>
         </div>
-        <?php if(!empty($fields)) : ?>
+        <?php if(!empty($departments)) : ?>
             <div class="column-12 md-column-7 layout-row layout-wrap align-spacebetween-stretch">
-                <?php foreach($fields as $field) :
-                    theme_view('homepage.fields.item', $field);
+                <?php foreach($departments as $dpt) :
+                    theme_view('homepage.departments.item', $dpt);
                 endforeach; ?>
             </div>
         <?php endif; ?>

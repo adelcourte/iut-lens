@@ -9,10 +9,10 @@
  */
 ?>
 <section>
-    <div class="row">
+    <div class="row align-center-center">
         <?php if(!empty($title)) : ?>
             <div class="column-12 mgb-5">
-                <span class="title--big text-center"><?=$title; ?></span>
+                <span class="title--big"><?=$title; ?></span>
             </div>
         <?php endif; ?>
         <?php if(!empty($list)) : ?>
@@ -20,16 +20,11 @@
                 <?php theme_view('homepage.speech.item', $item); ?>
             <?php endforeach; ?>
         <?php endif; ?>
-        <?php if(!empty($author)) : ?>
-            <div class="column-12 mgt-2_5">
-                <div class="flex align-start-center">
-                    <div class="content-empty pg-1_75 radius-50" style="background: url('<?=$author['src']; ?>') no-repeat center/cover"></div>
-                    <div class="flex layout-column mgl-1">
-                        <span class="title--smaller"><?=$author['firstname']; ?> <?=$author['lastname']; ?></span>
-                        <span class="small mgt-0_25"><?=$author['job']; ?></span>
-                    </div>
-                </div>
+        <?php if($quote) : ?>
+            <div class="column-8 mgt-10 pgt-5 align-center-center p-relative">
+                <img src="<?=get_template_directory_uri().'/assets/svg/quote-marks-big.svg' ?>" alt="quote_marks" class="icon--giant p-absolute top-0 left-50-percent transX-50 z-10">
+                <span class="title--big mgt-0_5 mgb-2 text-center"><?=$quote; ?></span>
+                <span class="text-gray_light"><?=$author['firstname']; ?> <?=$author['lastname']; ?>, <?=$author['job']; ?></span>
             </div>
         <?php endif; ?>
-    </div>
 </section>

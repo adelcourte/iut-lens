@@ -16,6 +16,7 @@ a {
     font-size: 1.4rem;
     font-weight: 500;
     width: fit-content;
+    font-weight: 700;
 
     &:hover {
         cursor: pointer;
@@ -32,7 +33,7 @@ a {
         }
 
         &[class*="--inverted"] {
-            background: clr(white);;
+            background: clr(white);
             color: clr(blue);
         }
 
@@ -43,6 +44,12 @@ a {
                 box-shadow: 0.25rem 0.75rem 2.5rem #{clr(blue_dark)}66;
             }
         }
+    }
+
+    &[class*="--white"] {
+        background: clr(white);
+        border: 0.2rem solid clr(white);
+        color: clr(blue);
     }
 }
 

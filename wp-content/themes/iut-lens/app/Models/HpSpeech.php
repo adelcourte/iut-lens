@@ -19,9 +19,10 @@ class HpSpeech extends Model
 
     public function getDatas() {
         return([
-            'title'         => \get_field('_hp_speech_title') ? \get_field('_hp_speech_title') : '',
-            'list'          => \get_field('_hp_speech_list') ? \get_field('_hp_speech_list') : '',
-            'author_id'     => \get_field('_hp_speech_author_id') ? \get_field('_hp_speech_author_id') : '',
+            'title'         => \get_field('_hp_speech_title'),
+            'list'          => \get_field('_hp_speech_list'),
+            'quote'         => \get_field('_hp_speech_quote'),
+            'author_id'     => \get_field('_hp_speech_author_id'),
         ]);
     }
 }
