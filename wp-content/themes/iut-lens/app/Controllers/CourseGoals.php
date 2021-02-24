@@ -31,8 +31,8 @@ class CourseGoals extends Controller
         }
 
         $id = \get_the_ID();
-        if($field = wp_get_post_terms($id, 'field')) {
-            $this->datas['field_color'] = get_field('_field_color', $field[0]->taxonomy.'_'.$field[0]->term_id);
+        if($dpt = wp_get_post_terms($id, 'department')) {
+            $this->datas['dpt_color'] = get_field('_dpt_color', $dpt[0]->taxonomy.'_'.$dpt[0]->term_id);
         }
 
         $this->datas['anchor_id'] = 'course_goals';

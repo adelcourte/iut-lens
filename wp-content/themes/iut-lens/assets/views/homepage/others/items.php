@@ -8,14 +8,17 @@
  * @version 1.0.0
  */
 ?>
-<section class="pgv-7_5">
+<section>
     <div class="row p-relative z-5 align-center-stretch">
         <?php if(!empty($list)) : ?>
             <?php foreach($list as $item) : ?>
                 <?php theme_view('homepage.others.item', $item); ?>
             <?php endforeach; ?>
         <?php endif; ?>
+        <div class="content-empty pg-2_5 bg-purple radius-br-100 p-absolute top-3 right-minus-1_5"></div>
+        <div class="p-absolute right-20 bottom-0 flex align-center-center transY-50-invert">
+            <div class="content-empty pg-1_5 bg-orange radius-bl-100"></div>
+            <div class="content-empty pg-1_5 bg-orange radius-br-100"></div>
+        </div>
     </div>
-    <div class="content-empty p-absolute height-10 size-35 top-0 right-0 bg-lime radius-tl-50"></div>
-    <div class="content-empty p-absolute height-10 size-35 bottom-0 left-0 bg-pink radius-br-50"></div>
 </section>

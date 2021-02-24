@@ -39,10 +39,10 @@ class CourseInfos extends Controller
         }
 
         $id = \get_the_ID();
-        if($field = wp_get_post_terms($id, 'field')) {
-            $this->datas['field_color'] = get_field('_field_color', $field[0]->taxonomy.'_'.$field[0]->term_id);
-            $this->datas['field_name'] = $field[0]->name;
-            $this->datas['field_url'] = get_term_link($field[0]);
+        if($dpt = wp_get_post_terms($id, 'department')) {
+            $this->datas['dpt_color'] = get_field('_dpt_color', $dpt[0]->taxonomy.'_'.$dpt[0]->term_id);
+            $this->datas['dpt_name'] = $dpt[0]->name;
+            $this->datas['dpt_url'] = get_term_link($dpt[0]);
         }
 
         $this->datas['anchor_id'] = 'course_infos';

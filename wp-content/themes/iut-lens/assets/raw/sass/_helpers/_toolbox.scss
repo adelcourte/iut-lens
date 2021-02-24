@@ -118,7 +118,7 @@
         @include selector('.p-relative', $bp_v){ position: relative !important; }
         @include selector('.p-fixed', $bp_v){ position: fixed !important; }
 
-        $values: ( 0, 2.5, 4.5, 5, 10, 7.5, 10, 20, 22.5, "auto" );
+        $values: ( 0, 1.5, 2.5, 3, 4.5, 5, 10, 7.5, 10, 17.5, 20, 22.5, "auto" );
         @each $v in reverse($values){
             $gap: if(type-of($v) == 'number', $vr * $v, #{$v});
 

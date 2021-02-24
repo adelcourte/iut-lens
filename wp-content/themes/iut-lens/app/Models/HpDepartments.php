@@ -13,20 +13,20 @@ use WPMVC\MVC\Models\PostModel as Model;
  * @package iut_lens
  * @version 1.0.0
  */
-class HpFields extends Model
+class HpDepartments extends Model
 {
     use FindTrait;
 
     public function getDatas() {
         $terms = get_terms([
-            'taxonomy'   => 'field',
+            'taxonomy'   => 'department',
             'hide_empty' => false,
         ]);
 
         return([
-            'title'     => \get_field('_hp_fields_title') ? \get_field('_hp_fields_title') : '',
-            'content'   => \get_field('_hp_fields_content') ? \get_field('_hp_fields_content') : '',
-            'link'      => \get_field('_hp_fields_link') ? \get_field('_hp_fields_link') : '',
+            'title'     => \get_field('_hp_dpt_title'),
+            'content'   => \get_field('_hp_dpt_content'),
+            'link'      => \get_field('_hp_dpt_link'),
             'terms'     => $terms,
         ]);
     }

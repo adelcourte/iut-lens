@@ -2,7 +2,7 @@
 
 namespace IUT_Lens\Controllers;
 
-use IUT_Lens\Models\HpFields as Model;
+use IUT_Lens\Models\HpDepartments as Model;
 use WPMVC\MVC\Controller;
 
 /**
@@ -13,7 +13,7 @@ use WPMVC\MVC\Controller;
  * @package iut_lens
  * @version 1.0.0
  */
-class HpFields extends Controller
+class HpDepartments extends Controller
 {
     public function init(){
         $model = new Model;
@@ -36,12 +36,12 @@ class HpFields extends Controller
             $this->datas['link_title'] = $datas['link']['title'];
         }
 
-        $this->datas['fields'] = [];
+        $this->datas['departments'] = [];
         if($datas['terms']) :
             foreach($datas['terms'] as $term) :
-                $this->datas['fields'][] = [
-                    'color'     => get_field('_field_color', $term->taxonomy.'_'.$term->term_id),
-                    'diplomas'  => get_field('_field_diplomas', $term->taxonomy.'_'.$term->term_id),
+                $this->datas['departments'][] = [
+                    'color'     => get_field('_dpt_color', $term->taxonomy.'_'.$term->term_id),
+                    'diplomas'  => get_field('_dpt_diplomas', $term->taxonomy.'_'.$term->term_id),
                     'title'     => $term->name,
                     'content'   => $term->description,
                     'link_url'  => get_term_link($term),
@@ -54,7 +54,7 @@ class HpFields extends Controller
 
     public function render($datas){
         if(!empty($datas)) :
-            $this->view->show('homepage.fields.items', $datas);
+            $this->view->show('homepage.departments.items', $datas);
         endif;
     }
 }

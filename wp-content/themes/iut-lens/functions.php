@@ -94,10 +94,10 @@ function init_courses() {
 
 
 
-// Fields
-add_action('init', 'init_fields');
-function init_fields() {
-    register_taxonomy('field', ['course'], [
+// Departments
+add_action('init', 'init_dpt');
+function init_dpt() {
+    register_taxonomy('department', ['course'], [
         'hierarchical'          => false,
         'public'                => true,
         'show_in_nav_menus'     => true,
@@ -112,33 +112,33 @@ function init_fields() {
             'assign_terms' => 'edit_posts',
         ],
         'labels'                => [
-            'name'                       => __('Pôles', 'iut_lens'),
-            'singular_name'              => __('Pôle', 'taxonomy general name', 'iut_lens'),
-            'search_items'               => __('Rechercher un pôle', 'iut_lens'),
-            'popular_items'              => __('Pôles populaires', 'iut_lens'),
-            'all_items'                  => __('Tous les pôles', 'iut_lens'),
-            'parent_item'                => __('Pôle parent', 'iut_lens'),
-            'parent_item_colon'          => __('Pôle parent:', 'iut_lens'),
-            'edit_item'                  => __('Éditer le pôle', 'iut_lens'),
-            'update_item'                => __('Mettre à jour le pôle', 'iut_lens'),
-            'view_item'                  => __('Voir le pôle', 'iut_lens'),
-            'add_new_item'               => __('Ajouter un nouveau pôle', 'iut_lens'),
-            'new_item_name'              => __('Nouveau pôle', 'iut_lens'),
-            'separate_items_with_commas' => __('Séparer les pôles par une virgule', 'iut_lens'),
-            'add_or_remove_items'        => __('Ajouter ou supprimer un pôle', 'iut_lens'),
-            'choose_from_most_used'      => __('Choisir parmi les pôles les plus utilisés', 'iut_lens'),
-            'not_found'                  => __('Aucun pôle trouvé.', 'iut_lens'),
-            'no_terms'                   => __('Aucun pôle', 'iut_lens'),
-            'menu_name'                  => __('Pôles', 'iut_lens'),
-            'items_list_navigation'      => __('Navigation dans la liste des pôles', 'iut_lens'),
-            'items_list'                 => __('Liste des pôles', 'iut_lens'),
-            'back_to_items'              => __('&larr; Revenir aux pôles', 'iut_lens'),
+            'name'                       => __('Départements', 'iut_lens'),
+            'singular_name'              => __('Département', 'taxonomy general name', 'iut_lens'),
+            'search_items'               => __('Rechercher un département', 'iut_lens'),
+            'popular_items'              => __('Départements populaires', 'iut_lens'),
+            'all_items'                  => __('Tous les départements', 'iut_lens'),
+            'parent_item'                => __('Département parent', 'iut_lens'),
+            'parent_item_colon'          => __('Département parent:', 'iut_lens'),
+            'edit_item'                  => __('Éditer le département', 'iut_lens'),
+            'update_item'                => __('Mettre à jour le département', 'iut_lens'),
+            'view_item'                  => __('Voir le département', 'iut_lens'),
+            'add_new_item'               => __('Ajouter un nouveau département', 'iut_lens'),
+            'new_item_name'              => __('Nouveau département', 'iut_lens'),
+            'separate_items_with_commas' => __('Séparer les départements par une virgule', 'iut_lens'),
+            'add_or_remove_items'        => __('Ajouter ou supprimer un département', 'iut_lens'),
+            'choose_from_most_used'      => __('Choisir parmi les départements les plus utilisés', 'iut_lens'),
+            'not_found'                  => __('Aucun département trouvé.', 'iut_lens'),
+            'no_terms'                   => __('Aucun département', 'iut_lens'),
+            'menu_name'                  => __('Départements', 'iut_lens'),
+            'items_list_navigation'      => __('Navigation dans la liste des départements', 'iut_lens'),
+            'items_list'                 => __('Liste des départements', 'iut_lens'),
+            'back_to_items'              => __('&larr; Revenir aux départements', 'iut_lens'),
         ],
         'show_in_rest'          => true,
-        'rest_base'             => 'field',
+        'rest_base'             => 'department',
         'rest_controller_class' => 'WP_REST_Terms_Controller',
         'rewrite'               => [
-            'slug' => __('poles', 'iut_lens'),
+            'slug' => __('departements', 'iut_lens'),
         ],
     ]);
 }

@@ -19,34 +19,5 @@ window.addEventListener('load', () => {
 
             side_menu.appendChild(a);
         })
-
-        window.addEventListener('scroll', () => {
-            // get scroll position
-            var scroll_Y = window.scrollY;
-
-            // Get side menu links
-            links = document.querySelectorAll('.anchor_link');
-
-            for(i=0;i<links.length;i++) {
-                // Get Y position of anchor pointed by the link
-                anchor_Y = anchors[i].getBoundingClientRect().top;
-
-                // Get Y position of next anchor or footer if no more anchors
-                if(anchors[i+1]) {
-                    anchor_Y_next = anchors[i+1].getBoundingClientRect().top;
-                } else {
-                    anchor_Y_next = document.getElementById('footer').getBoundingClientRect().top;
-                }
-
-                // If we are inside after the start of a section and dind't reach the next one
-                if(scroll_Y >= anchor_Y && scroll_Y < anchor_Y_next) {
-                    links[i].classList.remove('text-black');
-                    links[i].classList.add('text-blue');
-                } else {
-                    links[i].classList.remove('text-blue');
-                    links[i].classList.add('text-black');
-                }
-            }
-        })
     }
 })

@@ -11,6 +11,16 @@
         max-width: 7.5rem !important;
         max-height: 7.5rem !important;
     }
+    
+    &--giant {
+        max-width: 10rem !important;
+        max-height: 10rem !important;
+    }
+    
+    &--extra_giant {
+        max-width: 15rem !important;
+        max-height: 15rem !important;
+    }
 
     &--blue {
         fill: clr(blue);
@@ -21,9 +31,9 @@
         fill: clr(white);
         color: clr(white);
     }
-}
 
-.quote-marks {
-    position: absolute;
-    transform: translateX(-50%) translateY(-50%) !important;
+    &--gray_lighter {
+        fill: clr(gray_ligher);
+        color: clr(gray_ligher);
+    }
 }

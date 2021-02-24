@@ -6,3 +6,19 @@
         transform: translateY(-2.5rem);
     }
 }
+
+.card-hover-blue {
+    transition: $transition;
+
+    &:hover {
+        background: clr(blue) !important;
+
+        * {
+            color: clr(white) !important;
+        }
+
+        *[class*='button'] {
+            color: clr(blue) !important;
+        }
+    }
+}
