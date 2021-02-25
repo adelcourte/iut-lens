@@ -12,6 +12,7 @@ $colors: map-merge((
     body_background: #FFFFFF,
     
     gray_lighter: #F8F8F8,
+    gray_extralight: #DDDDDD,
     gray_light: #BBBBBB,
     gray: #999999,
     gray_dark: #666666,
@@ -35,11 +36,14 @@ $transition: all 0.2s ease-in-out;
 
 
 // Grid
-$row-width: 132rem;
+//$row-width: 132rem;
+$row-width: 120rem;
 $container-width: 100%;
 $total-columns: 12;
-$column-gutter: 3.5rem;
-$column-width: 7.5rem;
+//$column-gutter: 3.5rem;
+//$column-width: 7.5rem;
+$column-gutter: 4rem;
+$column-width: 6rem;
 $vr: 2rem;
 
 

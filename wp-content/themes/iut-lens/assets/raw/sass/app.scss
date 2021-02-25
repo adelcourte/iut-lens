@@ -38,29 +38,31 @@ $bps: (
 );
 
 // Global
-@import '_global/_variables';
-@import '_global/_mixins';
-@import '_global/_typography';
-@import '_global/_fonts';
+@import '_global/variables';
+@import '_global/mixins';
+@import '_global/typography';
+@import '_global/fonts';
 
 // Helpers
-@import '_helpers/_grid';
-@import '_helpers/_toolbox';
-@import '_helpers/_sections';
+@import '_helpers/grid';
+@import '_helpers/toolbox';
+@import '_helpers/sections';
 
 // Atoms
-@import '_atoms/_links';
-@import '_atoms/_images';
-@import '_atoms/_icons';
-@import '_atoms/_cards';
-@import '_atoms/_field_circles';
-@import '_atoms/_shadows';
-@import '_atoms/_swiper';
-@import '_atoms/_backgrounds';
+@import '_atoms/links';
+@import '_atoms/images';
+@import '_atoms/icons';
+@import '_atoms/cards';
+@import '_atoms/field_circles';
+@import '_atoms/shadows';
+@import '_atoms/swiper';
+@import '_atoms/backgrounds';
+@import '_atoms/progress_bar';
+@import '_atoms/forms';
 
 // Molecules
-@import '_molecules/_nav_main';
-@import '_molecules/_post_content';
+@import '_molecules/nav_main';
+@import '_molecules/post_content';
 
 html {
     font-size: 62.5%;
@@ -68,11 +70,13 @@ html {
     padding: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    width: 100%;
 }
 
 body {
     padding: 0;
     margin: 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
     font-size: 1.6rem;
@@ -81,6 +85,7 @@ body {
     line-height: 1.25;
     background-color: clr(body_background);
     scroll-behavior: smooth;
+    position: relative;
 
     @media screen and (max-width: $sm-breakpoint) {
       font-size: 1.8rem;

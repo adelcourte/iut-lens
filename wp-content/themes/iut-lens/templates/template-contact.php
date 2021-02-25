@@ -9,13 +9,11 @@
 get_header();
 ?>
 
-<section>
-    <div class="row">
-        <div class="column-12">
-            <?=do_shortcode('[ninja_form id=2]'); ?>
-        </div>
-    </div>
-</section>
+<?php
+    get_bridge('theme')->{'_c_void_ContactHero@init'}();
+    get_bridge('theme')->{'_c_void_ContactForm@init'}();
+    get_bridge('theme')->{'_c_void_Banner@init'}();
+?>
 
 <?php
 get_footer();

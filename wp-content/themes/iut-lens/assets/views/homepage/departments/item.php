@@ -1,4 +1,4 @@
-<div class="card-field size-100 md-size-45 flex layout-column align-center-center pgv-2 pgh-1 mgv-1 md-mgv-1_5 bd-1-gray_lighter">
+<div class="card-dpt size-100 md-size-45 flex layout-column align-center-center pgv-2 pgh-1 mgv-1 md-mgv-1_5 bg-white shadow-gray_extralight-faded">
     <div class="field-circles mgb-1_5">
         <div class="field-circles__color" style="background-color: <?=$color; ?>"></div>
         <div class="field-circles__blue"></div>

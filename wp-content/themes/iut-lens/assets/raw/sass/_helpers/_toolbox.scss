@@ -50,9 +50,9 @@
             $c_hex: nth($color, 2);
     
             @include selector('.text-#{$c_name}', $bp_v){ color: $c_hex !important; }
-            @include selector('.h-text-#{$c_name}', $bp_v){ transition: 0.2s ease-in-out; &:hover{ color: $c_hex !important; } }
+            @include selector('.hvr-text-#{$c_name}', $bp_v){ transition: 0.2s ease-in-out; &:hover{ color: $c_hex !important; } }
             @include selector('.bg-#{$c_name}', $bp_v){ background-color: $c_hex !important; }
-            @include selector('.h-bg-#{$c_name}', $bp_v){ &:hover{ background-color: $c_hex !important; } }
+            @include selector('.hvr-bg-#{$c_name}', $bp_v){ &:hover{ background-color: $c_hex !important; } }
         }
 
         // Shadows
@@ -60,7 +60,6 @@
             $c_name: nth($color, 1);
             $c_hex: nth($color, 2);
     
-            //@include selector('.shadow-#{$c_name}-faded', $bp_v){ box-shadow: 0.25rem 0.75rem 2.5rem #{$c_hex)}66 !important; }
             @include selector('.shadow-#{$c_name}-faded', $bp_v){ box-shadow: 0 1.75rem 5rem #{$c_hex)}66 !important; }
         }
 
@@ -90,6 +89,16 @@
             @include selector('.radius-tl-#{$i}', $bp_v){ border-top-left-radius: $i * 1% !important; }
         }
 
+        // Border radius
+        @for $i from 1 through 100{
+            @include selector('.radius-#{$i}-rem', $bp_v){ border-radius: $i * 1rem !important; }
+
+            @include selector('.radius-tr-#{$i}-rem', $bp_v){ border-top-right-radius: $i * 1rem !important; }
+            @include selector('.radius-br-#{$i}-rem', $bp_v){ border-bottom-right-radius: $i * 1rem !important; }
+            @include selector('.radius-bl-#{$i}-rem', $bp_v){ border-bottom-left-radius: $i * 1rem !important; }
+            @include selector('.radius-tl-#{$i}-rem', $bp_v){ border-top-left-radius: $i * 1rem !important; }
+        }
+
 
 
         // Text alignments
@@ -109,6 +118,12 @@
         $font-weight: (300, 400, 500, 700);
         @each $fw in reverse($font-weight){
             @include selector('.fw-#{str-replace(inspect($fw), '.', '_')}', $bp_v){ font-weight: $fw !important; }
+        }
+
+        // Line heights
+        $line-heights: (1, 1.25, 1.5, 1.775, 2, 2.25, 2.5);
+        @each $lh in reverse($line-heights){
+            @include selector('.lh-#{str-replace(inspect($lh), '.', '_')}', $bp_v){ line-height: $lh !important; }
         }
 
 

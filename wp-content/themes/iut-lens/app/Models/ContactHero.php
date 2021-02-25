@@ -13,16 +13,14 @@ use WPMVC\MVC\Models\PostModel as Model;
  * @package iut_lens
  * @version 1.0.0
  */
-class News extends Model
+class ContactHero extends Model
 {
     use FindTrait;
 
     public function getDatas() {
         return([
-            'title'         => \get_field('_news_title', 'option'),
-            'posts_ids'     => \get_field('_news_posts_ids', 'option'),      
-            'link_single'   => \get_field('_news_link_single', 'option'),
-            'link'          => \get_field('_news_link', 'option'),
+            'title'     => \get_field('_contact_title'),
+            'coords'    => \get_field('_coords', 'option'),
         ]);
     }
 }

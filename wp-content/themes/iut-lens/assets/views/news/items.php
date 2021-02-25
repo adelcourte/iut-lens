@@ -11,7 +11,7 @@
 <section class="pgv-5 bg-gray_lighter full-width">
     <div class="row align-spacebetween-stretch">
         <?php if(!empty($title)) : ?>
-            <div class="column-12 mgb-5">
+            <div class="column-12 mgb-3_5">
                 <span class="title--big text-center"><?=$title; ?></span>
             </div>
         <?php endif; ?>
@@ -39,15 +39,8 @@
             <?php wp_reset_postdata(); ?>
         <?php endif; ?>
         <?php if(!empty($link_url)) : ?>
-            <div class="column-4 align-center-center">
-                <a href="<?=$link_url; ?>" target="<?=$link_target; ?>" class="link-round link-round--blue">
-                    <div class="link-round__content">
-                        <span class="mgb-0_5"><?=$link_title; ?></span>
-                        <svg class="icon--big icon--white">
-                            <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow"></use>
-                        </svg>
-                    </div>
-                </a>
+            <div class="column-12 align-center-center mgt-3_5">
+                <a href="<?=$link_url; ?>" target="<?=$link_target; ?>" class="button--blue"><?=$link_title; ?></a>
             </div>
         <?php endif; ?>
     </div>

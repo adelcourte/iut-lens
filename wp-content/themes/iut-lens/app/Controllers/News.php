@@ -37,13 +37,16 @@ class News extends Controller
             $this->datas['link_title'] = $datas['link']['title'];
         }
 
-        $this->datas['news'] = new WP_Query([
-            'posts_per_page'    => 2,
-            'post_type'         => 'post',
-            'status'            => 'publish',
-            'order_by'          => 'date',
-            'order'             => 'DESC',
-        ]);
+        if(!empty($datas['posts_ids'])) {
+            $this->datas['news'] = new WP_Query([
+                'posts_per_page'    => 3,
+                'post_type'         => 'post',
+                'status'            => 'publish',
+                'order_by'          => 'date',
+                'order'             => 'DESC',
+                'post__in'          => $datas['posts_ids'],
+            ]);
+        }
 
         $this->render($this->datas);
     }
