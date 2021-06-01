@@ -12,20 +12,20 @@ $colors: map-merge((
     body_background: #FFFFFF,
     
     gray_lighter: #F8F8F8,
-    gray_extralight: #DDDDDD,
+    gray_extralight: #EEEEEE,
     gray_light: #BBBBBB,
     gray: #999999,
     gray_dark: #666666,
     gray_darker: #333333,
     
-    blue_lighter: #5254FF22,
-    blue: #5254FF,
-    blue_dark: darken(#5254FF, 25%),
+    blue_lighter: #4A4CFF22,
+    blue: #4A4CFF,
+    blue_dark: darken(#4A4CFF, 25%),
 
     purple: #BE4BDB,
     pink: #F0548B,
     aqua: #3CC8DB,
-    orange: #FD9F42,
+    orange: #FFA94D,
     lime: #D0F36B,
 ), $colors);
 

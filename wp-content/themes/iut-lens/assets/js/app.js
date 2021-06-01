@@ -1,4 +1,22 @@
 /**
+ * Dropdowns asset.
+ *
+ * @author Antoine Delcourte <antoine.delcourte@gmail.com>
+ * @package {iut_lens}
+ * @version 1.0.0
+ */
+window.addEventListener('load', () => {
+    Array.from(document.getElementsByClassName('dropdown')).forEach(dropdown =>
+        dropdown.addEventListener('click', () => {
+            if(dropdown.classList.contains('closed')) {
+                dropdown.classList.remove('closed')
+            } else {
+                dropdown.classList.add('closed')
+            }
+        })
+    )
+})
+/**
  * Fake Links asset.
  *
  * @author Antoine Delcourte <antoine.delcourte@gmail.com>
@@ -88,19 +106,11 @@ window.addEventListener('load', () => {
  * @version 1.0.0
  */
 window.addEventListener('load', () => {
-    if(side_menu = document.getElementById('side_menu')) {
-        anchors = document.querySelectorAll('.anchor');
-        
-        anchors.forEach(anchor => {
-            var a = document.createElement('a');
-            var title = document.createTextNode(anchor.dataset.title);
-            a.appendChild(title);
-            a.id = anchor.id.concat('_link');
-            a.href = '#'.concat(anchor.id);
-            a.classList.add('mgv-0_5', 'text-black', 'small', 'anchor_link', 'h-text-blue');
-
-            side_menu.appendChild(a);
-        })
+    if(side_nav = document.getElementById('side_nav')) {
+        row = Array.from(document.getElementsByClassName('row'))[0]
+        left = parseInt(getComputedStyle(row).getPropertyValue('margin-left'), 10) + 30 + 'px'
+        console.log(left)
+        side_nav.style.left = left;
     }
 })
 /**

@@ -124,9 +124,9 @@
                             <?php endif; ?>
                             <?php if(!empty($dpt['link_url'])) : ?>
                                 <span data-fl="<?=base64_encode(esc_url($dpt['link_url'])); ?>" class="link-arrow--blue mgt-auto">
-                                    Découvrir
+                                    <span>Découvrir</span>
                                     <svg class="icon icon--blue">
-                                        <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow"></use>
+                                        <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow-small"></use>
                                     </svg>
                                 </span>
                             <?php endif; ?>
@@ -184,9 +184,9 @@
                                 <a href="<?=get_the_permalink(); ?>"><span class="title mgb-1"><?=get_the_title(); ?></span></a>
                                 <p class="mgb-2"><?=get_the_excerpt(); ?></p>
                                 <span data-fl="<?=base64_encode(esc_url(get_the_permalink())); ?>" class="link-arrow--blue mgt-auto size-fit">
-                                    <?=$link_single; ?>
+                                    <span><?=$link_single; ?></span>
                                     <svg class="icon icon--blue">
-                                        <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow"></use>
+                                        <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow-small"></use>
                                     </svg>
                                 </span>
                             </div>

@@ -34,9 +34,6 @@
                                                         <?php foreach($link['dropdown_links'] as $item) : ?>
                                                             <div class="main-menu__links__dropdown__items__iut">
                                                                 <a href="<?=esc_url($item['link']['url']); ?>"><?=$item['link']['title']; ?></a>
-                                                                    <div class="main-menu__links__dropdown__items__iut__image" style="background-image: url('<?=esc_url(wp_get_attachment_url($item['image_id'])); ?>">
-                                                                    </div>
-                                                                </a>
                                                             </div>
                                                         <?php endforeach; ?>
                                                     </div>
@@ -93,7 +90,12 @@
                                                                 $type = get_field('_course_infos_type', get_the_ID());
                                                                 ?>
                                                                     <?php if($type['value'] == 'but') : ?>
-                                                                        <a href="<?=$link_url; ?>" class="course-link"><?=$link_title; ?></a>
+                                                                        <a href="<?=$link_url; ?>" class="link-arrow--blue fz-18">
+                                                                            <span><?=$link_title; ?></span>
+                                                                            <svg class="icon icon--blue">
+                                                                                <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow-small"></use>
+                                                                            </svg>
+                                                                        </a>
                                                                     <?php endif; ?>
                                                                 <?php
                                                             }
@@ -111,7 +113,12 @@
                                                                 $type = get_field('_course_infos_type', get_the_ID());
                                                                 ?>
                                                                     <?php if($type['value'] == 'lp') : ?>
-                                                                        <a href="<?=$link_url; ?>" class="course-link"><?=$link_title; ?></a>
+                                                                        <a href="<?=$link_url; ?>" class="link-arrow--blue fz-18">
+                                                                            <span><?=$link_title; ?></span>
+                                                                            <svg class="icon icon--blue">
+                                                                                <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow-small"></use>
+                                                                            </svg>
+                                                                        </a>
                                                                     <?php endif; ?>
                                                                 <?php
                                                             }
@@ -129,7 +136,12 @@
                                                                 $type = get_field('_course_infos_type', get_the_ID());
                                                                 ?>
                                                                     <?php if($type['value'] == 'du') : ?>
-                                                                        <a href="<?=$link_url; ?>" class="course-link"><?=$link_title; ?></a>
+                                                                        <a href="<?=$link_url; ?>" class="link-arrow--blue fz-18 size-fit">
+                                                                            <span><?=$link_title; ?></span>
+                                                                            <svg class="icon icon--blue">
+                                                                                <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow-small"></use>
+                                                                            </svg>
+                                                                        </a>
                                                                     <?php endif; ?>
                                                                 <?php
                                                             }

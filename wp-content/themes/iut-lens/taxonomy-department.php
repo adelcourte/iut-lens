@@ -100,54 +100,19 @@
     <section>
         <div class="row mgb-2_5">
             <div class="column-12">
-                <span class="title--big">Les formations</span>
+                <span class="title--extra">Les formations</span>
             </div>
         </div>
         <div class="row">
             <div class="column-12">
                 <?php if(!empty($courses)) : ?>
-                    <table>
-                        <tr class="pgb-1 bdb-1-gray_extralight">
-                            <td class="pgb-0_75 bdb-1-gray_extralight"><span class="small text-gray">Intitulé de la formation</span></td>
-                            <td class="pgb-0_75 bdb-1-gray_extralight"><span class="small text-gray">Niveau d'entrée</span></td>
-                            <td class="pgb-0_75 bdb-1-gray_extralight pgr-2"><span class="small text-gray">Durée</span></td>
-                            <td class="pgb-0_75 bdb-1-gray_extralight"><span class="small text-gray">Stage/Alternance</span></td>
-                        </tr>
-                            <?php foreach($courses as $item) : ?>
-                                <tr>
-                                    <td class="pgv-0_75 bdb-1-gray_extralight">
-                                        <?php if(!empty($title)) : ?>
-                                            <a href="<?php if(!empty($item['link'])) : ?> <?=$item['link']; ?> <?php endif; ?>">
-                                                <h2 class="title hvr-text-blue"><?=$item['title']; ?></h2>
-                                            </a>
-                                        <?php endif; ?>
-                                    </td>
-                                    <td class="pgv-0_75 bdb-1-gray_extralight">
-                                        <div class="flex size-fit">
-                                            <?php if(!empty($item['entry'])) : ?>
-                                                <?php foreach($item['entry'] as $entry) : ?>
-                                                    <span class="pgv-0_25 pgh-0_5 mgr-0_5 small bg-blue_lighter radius-100-rem size-fit"><?=$entry; ?></span>
-                                                <?php endforeach; ?>
-                                            <?php endif; ?>
-                                        </div>
-                                    </td>
-                                    <td class="pgv-0_75 bdb-1-gray_extralight">
-                                        <?php if(!empty($item['years'])) : ?>
-                                            <span class="text-blue"><?=$item['years']; ?></span>
-                                        <?php endif; ?>
-                                    </td>
-                                    <td class="pgv-0_75 bdb-1-gray_extralight">
-                                        <div class="flex size-fit">
-                                            <?php if(!empty($item['internships'])) : ?>
-                                                <?php foreach($item['internships'] as $internships) : ?>
-                                                    <span class="pgv-0_25 pgh-0_5 mgr-0_5 small bg-blue_lighter radius-100-rem size-fit"><?=$internships; ?></span>
-                                                <?php endforeach; ?>
-                                            <?php endif; ?>
-                                        </div>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                    </table>
+                    <?php foreach($courses as $item) : ?>
+                        <?php if(!empty($item['title'])) : ?>
+                            <a href="<?php if(!empty($item['link'])) : ?> <?=$item['link']; ?> <?php endif; ?>" class="link-rectangle mgb-1">
+                                <h2 class="title"><?=$item['title']; ?></h2>
+                            </a>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>

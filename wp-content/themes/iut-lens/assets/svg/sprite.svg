@@ -2,4 +2,10 @@
     <symbol id="icon-arrow" viewBox="0 0 24 16">
         <path id="arrow" d="M75.537,56l-1.2,1.2,5.947,5.942L59.549,62.8V64.51l20.731.347L74.335,70.8l1.2,1.2,6.8-6.8.005.007,1.2-1.2Z" transform="translate(-59.549 -56)" fill="inherit" fill-rule="evenodd"/>
     </symbol>
+    <symbol id="icon-arrow-small" viewBox="0 0 9.75 11.258">
+        <path id="arrow-small" d="M41,34.5l-9.75,5.629V28.871Z" transform="translate(-31.25 -28.871)" fill="#4a4cff"/>
+    </symbol>
+    <symbol id="icon-arrow-down" width="10" height="5" viewBox="0 0 10 5">
+        <path id="arrow-down" d="M36.25,33.871l-5,5v-10Z" transform="translate(38.871 -31.25) rotate(90)" fill="#151515"/>
+    </symbol>
 </svg>

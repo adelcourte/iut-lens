@@ -27,6 +27,8 @@
                     filter: opacity(1);
                     top: 100% !important;
                     max-height: 100vh !important;
+                    border-top: 0.1rem solid clr(gray_extralight);
+                    border-bottom: 0.1rem solid clr(gray_extralight);
                 }
             }
 
@@ -40,8 +42,6 @@
                 transition: all 0.3s ease;
                 max-height: 0 !important;
                 overflow: hidden !important;
-                border-top: 0.1rem solid clr(gray_extralight);
-                border-bottom: 0.1rem solid clr(gray_extralight);
 
                 &:hover {
                     filter: opacity(1);
@@ -77,7 +77,7 @@
 
                     &__menu {
                         padding: 4rem;
-                        width: 50%;
+                        width: 55%;
                         height: 100%;
                         background: #{clr(gray_lighter)};
                         position: absolute;
@@ -144,32 +144,10 @@
                         position: relative;
                     }
 
-                    &__image {
-                        width: 50%;
-                        height: 100%;
-                        background: #{clr(blue)}33;
-                        position: absolute;
-                        top: 0;
-                        right: -5rem;
-                        filter: opacity(0);
-                        transition: all 0.3s ease;
-                        z-index: -100;
-                        content: '';
-                        background-size: cover;
-                        background-position: center;
-                        background-repeat: no-repeat;
-                    }
-
                     &:hover {
                         a {
                             color: clr(blue);
                             width: 100% !important;
-                        }
-
-                        *[class*='image'] {
-                            right: 0 !important;
-                            filter: opacity(1);
-                            z-index: 600;
                         }
                     }
                 }

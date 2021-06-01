@@ -61,10 +61,11 @@ $bps: (
 @import '_atoms/forms';
 @import '_atoms/breadcrumbs';
 @import '_atoms/popup';
+@import '_atoms/dropdown';
 
 // Molecules
 @import '_molecules/main_menu';
-@import '_molecules/post_content';
+@import '_molecules/content';
 
 html {
     font-size: 62.5%;
