@@ -9,10 +9,10 @@
     <?php if(!empty($title)) : ?>
         <?php if(!empty($link_url)) : ?>
             <a href="<?=$link_url; ?>">
-                <h2 class="title--small mgb-1"><?=$title; ?></h2>
+                <h2 class="title mgb-1"><?=$title; ?></h2>
             </a>
         <?php else : ?>
-            <h2 class="title--small mgb-1"><?=$title; ?></h2>
+            <h2 class="title mgb-1"><?=$title; ?></h2>
         <?php endif; ?>
     <?php endif; ?>
     <?php if(!empty($content)) : ?>

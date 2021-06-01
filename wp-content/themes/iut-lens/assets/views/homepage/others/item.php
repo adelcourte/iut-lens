@@ -1,9 +1,9 @@
 <div class="column-6">
     <div class="size-100 height-20 bg-gray_lighter pg-4 flex layout-column align-center-center card-hover-blue">
         <?php if($title) : ?>
-            <span class="title--smaller text-gray_dark">Vous êtes</span>
+            <span class="title text-gray_dark">Vous êtes</span>
             <?php if(!empty($link['url'])) : ?>
-                <a href="<?=$link['url']; ?>" target="<?=$link['target']; ?>"><h3 class="title--big--bolder mgb-1_5"><?=$title; ?></h3></a>
+                <a href="<?=$link['url']; ?>" target="<?=$link['target']; ?>"><h3 class="title--big mgb-1_5"><?=$title; ?></h3></a>
             <?php else : ?>
                 <h3 class="title--big mgb-1_5"><?=$title; ?></h3>
             <?php endif; ?>

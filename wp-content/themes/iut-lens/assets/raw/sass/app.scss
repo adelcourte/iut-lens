@@ -59,9 +59,11 @@ $bps: (
 @import '_atoms/backgrounds';
 @import '_atoms/progress_bar';
 @import '_atoms/forms';
+@import '_atoms/breadcrumbs';
+@import '_atoms/popup';
 
 // Molecules
-@import '_molecules/nav_main';
+@import '_molecules/main_menu';
 @import '_molecules/post_content';
 
 html {
@@ -80,7 +82,7 @@ body {
     display: flex;
     flex-direction: column;
     font-size: 1.6rem;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     color: clr(gray_darker);
     line-height: 1.25;
     background-color: clr(body_background);
@@ -96,6 +98,24 @@ body * {
   box-sizing: border-box;
   display: block;
 
+  table {
+    display: table !important;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  tbody, thead {
+    display: table-row-group !important;
+  }
+
+  tr {
+    display: table-row !important;
+  }
+
+  td {
+    display: table-cell !important;
+  }
+
   script {
     display: none;
   }
@@ -107,4 +127,9 @@ body * {
   * {
     display: inline-block;
   }
+}
+
+main {
+  position: relative;
+  z-index: 400;
 }

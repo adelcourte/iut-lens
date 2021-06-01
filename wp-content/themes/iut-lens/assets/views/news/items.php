@@ -24,7 +24,7 @@
                     <div class="size-100 height-20 bg-white">
                         <div class="pg-2 height-20 flex layout-column align-spacebetween-start">
                             <span class="fz-14 text-gray mgb-0_25"><?=get_the_date(); ?></span>
-                            <span class="title--small--bold mgb-1"><?=get_the_title(); ?></span>
+                            <span class="title mgb-1"><?=get_the_title(); ?></span>
                             <p class="mgb-2"><?=get_the_excerpt(); ?></p>
                             <a href="<?=get_the_permalink(); ?>" class="link-arrow--blue mgt-auto size-fit">
                                 <?=$link_single; ?>

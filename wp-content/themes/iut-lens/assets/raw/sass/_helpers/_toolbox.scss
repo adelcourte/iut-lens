@@ -4,7 +4,7 @@
 
     @media #{$bp_k}{
         // Margin - Padding
-        $vertical-values: ( 0, 0.25, 0.5, 0.75, 1, 1.5, 1.75, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 15, "auto" );
+        $vertical-values: ( 0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 15, 17.5, "auto" );
 
         @each $v in reverse($vertical-values){
             $gap: if(type-of($v) == 'number', $vr * $v, #{$v});
@@ -40,6 +40,11 @@
                 @include selector('.pgb-#{str-replace(inspect($v), '.', '_')}', $bp_v){ padding-bottom: $gap !important; }
                 @include selector('.pgl-#{str-replace(inspect($v), '.', '_')}', $bp_v){ padding-left: $gap !important; }
             }
+        }
+
+        // Padding percent
+        @for $i from 1 through 100{
+            @include selector('.pgb-#{$i}-percent', $bp_v){ padding-bottom: $i * 1% !important; }
         }
 
 
@@ -133,7 +138,7 @@
         @include selector('.p-relative', $bp_v){ position: relative !important; }
         @include selector('.p-fixed', $bp_v){ position: fixed !important; }
 
-        $values: ( 0, 1.5, 2.5, 3, 4.5, 5, 10, 7.5, 10, 17.5, 20, 22.5, "auto" );
+        $values: ( 0, 1.5, 2.5, 3, 4.5, 5, 7.5, 10, 12.5, 15, 17.5, 20, 22.5, "auto" );
         @each $v in reverse($values){
             $gap: if(type-of($v) == 'number', $vr * $v, #{$v});
 
@@ -144,6 +149,8 @@
 
             @include selector('.bottom-minus-#{str-replace(inspect($v), '.', '_')}', $bp_v){ bottom: -#{$gap} !important; }
             @include selector('.right-minus-#{str-replace(inspect($v), '.', '_')}', $bp_v){ right: -#{$gap} !important; }
+            @include selector('.left-minus-#{str-replace(inspect($v), '.', '_')}', $bp_v){ left: -#{$gap} !important; }
+            @include selector('.top-minus-#{str-replace(inspect($v), '.', '_')}', $bp_v){ top: -#{$gap} !important; }
         }
 
         @for $i from 0 through 100 {

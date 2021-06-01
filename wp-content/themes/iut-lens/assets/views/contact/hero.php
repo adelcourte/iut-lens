@@ -8,17 +8,17 @@
  * @version 1.0.0
  */
 ?>
-<section class="mgt-5">
+<section class="mgt-7_5">
     <div class="row align-spacebetween-start">
         <div class="column-4">
             <?php if($title) : ?>
-                <h1 class="title--extra--bolder"><?=$title; ?></h1>
+                <h1 class="title--extra"><?=$title; ?></h1>
             <?php endif; ?>
             <?php if($coords) : ?>
                 <div class="flex layout-column">
                     <?php foreach($coords as $coord) : ?>
                         <div class="mgt-2">
-                            <span class="title--small mgb-1"><?=$coord['title']; ?></span>
+                            <span class="title mgb-1"><?=$coord['title']; ?></span>
                             <span><?=$coord['content']; ?></span>
                         </div>
                     <?php endforeach; ?>

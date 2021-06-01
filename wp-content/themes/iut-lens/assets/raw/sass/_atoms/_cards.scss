@@ -1,8 +1,54 @@
 .card-dpt {
-    transition: $transition;
+    transition: all 0.2s ease-in-out;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 3rem;
+    margin: 3rem 0;
+    background: clr(gray_lighter);
+
+    .field-circles__blue, .field-circles__color {
+        transition: all 0.3s ease-in-out;
+    }
 
     &:hover {
         transform: translateY(-2.5rem);
+
+        .field-circles {
+            &__blue {
+                transform: translateX(calc(-50% - 2rem)) translateY(-50%);
+            }
+        
+            &__color {
+                transform: translateX(calc(-50% + 2rem)) translateY(-50%);
+            }
+        }
+    }
+}
+
+.card-article {
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0.3rem;
+        background: clr(blue);
+        transition: all 0.2s ease-in-out;
+    }
+
+    &:hover {
+        &:after {
+            width:100% !important;
+        }
+
+        .link-arrow--blue {
+            transform: translateY(-1rem);
+        }
     }
 }
 

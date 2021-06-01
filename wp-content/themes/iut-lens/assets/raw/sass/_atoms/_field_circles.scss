@@ -1,6 +1,6 @@
 .field-circle {
     content: "";
-    width: 3rem;
+    width: 7.2rem;
     height: 3rem;
     overflow: hidden;
     border-radius: 50%;
@@ -12,14 +12,14 @@
     align-items: center;
     justify-content: center;
     width: fit-content !important;
-    height: 5rem;
+    height: 6rem;
     position: relative;
     content: "";
 
     &__color, &__blue {
         content: "";
-        width: 5rem;
-        height: 5rem;
+        width: 6rem;
+        height: 6rem;
         overflow: hidden;
         border-radius: 50%;
         mix-blend-mode: multiply;
@@ -30,11 +30,71 @@
 
     &__blue {
         background: clr(blue);
-        transform: translateX(calc(-50% + 1.25rem)) translateY(-50%);
+        transform: translateX(calc(-50% + 2rem)) translateY(-50%);
     }
 
     &__color {
         background: clr(blue)66;
-        transform: translateX(calc(-50% - 1.25rem)) translateY(-50%);
+        transform: translateX(calc(-50% - 2rem)) translateY(-50%);
+    }
+
+    &--giant {
+        height: 45rem;
+        width: 70rem !important;
+
+        .field-circles__color, .field-circles__blue {
+            width: 45rem !important;
+            height: 45rem !important;
+        }
+
+        .field-circles__blue {
+            transform: translateX(calc(-50% + 15rem)) translateY(-50%);
+        }
+
+        .field-circles__color {
+            transform: translateX(calc(-50% - 15rem)) translateY(-50%);
+        }
+    }
+
+    &--small {
+        width: 3.5rem !important;
+        height: 2.5rem !important;
+
+        .field-circles__color, .field-circles__blue {
+            width: 2.5rem !important;
+            height: 2.5rem !important;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .field-circles__blue {
+            right: 0;
+        }
+
+        .field-circles__color {
+            left: 0;
+        }
+    }
+
+    &--smaller {
+        width: 2rem !important;
+        height: 1.5rem !important;
+
+        .field-circles__color, .field-circles__blue {
+            width: 1.5rem !important;
+            height: 1.5rem !important;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .field-circles__blue {
+            right: 0;
+        }
+
+        .field-circles__color {
+            left: 0;
+        }
     }
 }

@@ -14,8 +14,8 @@
         <div class="column-8 mgb-2">
             <?php if($title) : ?>
                 <div class="flex">
-                    <span class="title--small mgr-0_5" style="color: <?=$dpt_color; ?>">#</span>
-                    <h3 class="title--small"><?=$title; ?></h3>
+                    <span class="title mgr-0_5" style="color: <?=$dpt_color; ?>">#</span>
+                    <h3 class="title"><?=$title; ?></h3>
                 </div>
             <?php endif; ?>
         </div>

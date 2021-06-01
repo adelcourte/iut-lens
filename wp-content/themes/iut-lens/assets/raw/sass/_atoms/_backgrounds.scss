@@ -19,4 +19,10 @@
             background-color: clr(gray_lighter);
         }
     }
+
+    &--blue_lighter {
+        &:before {
+            background-color: clr(blue_lighter);
+        }
+    }
 }

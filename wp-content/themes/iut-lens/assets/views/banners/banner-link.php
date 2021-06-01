@@ -13,7 +13,7 @@
         <div class="column-12">
             <div class="size-100 pgv-4 flex layout-column align-center-center bg-blue radius-1-rem">
                 <?php if($title) : ?>
-                    <h3 class="title--big--bolder text-white mgb-1_5"><?=$title; ?></h3>
+                    <h3 class="title--big text-white mgb-1_5"><?=$title; ?></h3>
                 <?php endif; ?>
                 <?php if($link_url) : ?>
                     <a href="<?=$link_url; ?>" target="<?=$link_target; ?>" class="button--white"><?=$link_title; ?></a>

@@ -15,7 +15,7 @@
                 <h1 class="title text-gray"><?=$uptitle; ?></h1>
             <?php endif; ?>
             <?php if(!empty($title)) : ?>
-                <span class="title--extra--extrabold mgb-1"><?=$title; ?></span>
+                <span class="title--extra mgb-1"><?=$title; ?></span>
             <?php endif; ?>
             <?php if(!empty($content)) : ?>
                 <p class="mgb-2"><?=$content; ?></p>

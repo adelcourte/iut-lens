@@ -1,5 +1,10 @@
 form {
-    .nf-before-form-content, .ninja-forms-req-symbol, .nf-after-field, .nf-error.field-wrap .nf-field-element:after {
+    .nf-before-form-content,
+    .ninja-forms-req-symbol,
+    .nf-after-field,
+    .nf-error.field-wrap .nf-field-element:after,
+    .nf-pass.field-wrap .nf-field-element:after,
+    {
         display: none;
     }
 
@@ -12,7 +17,7 @@ form {
             border: 0.1rem solid clr(gray_light) !important;
             background: clr(body_background) !important;
             padding: 1.5rem 2rem !important;
-            font-family: 'Manrope', sans-serif !important;
+            font-family: 'DM Sans', sans-serif !important;
             outline: none !important;
             overflow: hidden !important;
         }
@@ -25,6 +30,10 @@ form {
         input, textarea {
             &:focus, &:valid {
                 border-color: clr(blue) !important;
+            }
+
+            &:valid {
+                color: clr(black) !important;
             }
         }
 
@@ -79,7 +88,7 @@ form {
 
         .nf-fu-progress-bar {
             background: clr(blue) !important;
-            height: 1rem !important;
+            height: 0.75rem !important;
         }
 
         .files_uploaded {
@@ -108,10 +117,10 @@ form {
 
     .submit-wrap {
         input {
-            padding: 2rem 8rem !important;
+            padding: 1.5rem 6rem !important;
             border-radius: 0.25rem !important;
             transition: $transition !important;
-            font-family: 'Manrope', sans-serif !important;
+            font-family: 'DM Sans', sans-serif !important;
             font-size: 1.4rem !important;
             font-weight: 500 !important;
             width: fit-content !important;

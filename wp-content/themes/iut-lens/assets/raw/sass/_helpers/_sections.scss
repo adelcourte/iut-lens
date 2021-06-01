@@ -1,13 +1,13 @@
 section {
     width: 100%;
     max-width: 192rem;
-    margin: 0 auto 20rem auto;
+    margin: 0 auto 15rem auto;
     position: relative;
 
     @media screen and (max-width: $sm-breakpoint) {
         padding-left: 2rem;
         padding-right: 2rem;
-        margin: 0 auto 12.5rem auto;
+        margin: 0 auto 10rem auto;
     }
 }
 

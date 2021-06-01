@@ -1,22 +1,12 @@
 .progress-bar {
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
-
-    &__background {
-        height: 0.75rem;
-        background: clr(gray_light);
-        width: 100%;
-    }
+    z-index: 2000;
 
     &__advance {
         background: clr(blue);
-        height: 0.75rem;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        z-index: 1005;
+        height: 0.5rem;
     }
 }

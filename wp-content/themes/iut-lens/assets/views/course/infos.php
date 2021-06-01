@@ -12,11 +12,12 @@
     <a id="<?=$anchor_id; ?>" class="anchor dp_none" data-title="<?=$anchor_title; ?>"></a>
     <div class="row align-center-center">
         <div class="column-8 mgb-2_5">
+            <?php require_once(dirname( __FILE__ ) . '/../_components/breadcrumbs/course.php'); ?>
             <?php if($dpt_name) : ?>
-                <a href="<?=$dpt_url; ?>"><span class="title--smaller mgb-1" style="color: <?=$dpt_color; ?>"><?=$dpt_name; ?></span></a>
+                <a href="<?=$dpt_url; ?>"><span class="title mgb-1" style="color: <?=$dpt_color; ?>"><?=$dpt_name; ?></span></a>
             <?php endif; ?>
             <?php if($title) : ?>
-                <h1 class="title--extra--bolder"><?=$title; ?></h1>
+                <h1 class="title--extra"><?=$title; ?></h1>
             <?php endif; ?>
         </div>
         <?php if($image_src) : ?>
