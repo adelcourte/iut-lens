@@ -89,7 +89,7 @@ get_header();
     <section>
         <div class="row">
             <div class="column-12 align-center-center">
-                <div class="size-75 pgv-4 radius-1-rem bg-gray_extralight flex layout-column align-center-center">
+                <div class="size-75 pgv-4 radius-1-rem bg-gray_lighter flex layout-column align-center-center">
                     <?php if(!empty($title)) : ?>
                         <span class="title--extra mgb-1_5"><?=$title; ?></span>
                     <?php endif; ?>

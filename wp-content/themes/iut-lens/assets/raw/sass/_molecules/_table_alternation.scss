@@ -1,0 +1,18 @@
+.table-alternation {
+    width: 100%;
+    
+    thead td {
+        padding-bottom: 1.5rem;
+        color: clr(gray_dark);
+    }
+
+    tbody td {
+        padding: 1.5rem 0;
+        border-top: 0.1rem solid clr(gray_extralight);
+    }
+
+    tr {
+        display: flex;
+        justify-content: space-between;
+    }
+}

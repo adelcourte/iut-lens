@@ -132,7 +132,7 @@
     <section>
         <div class="row align-spacebetween-start">
             <div class="column-4">
-                <span class="title--big">Organisation des études</span>
+                <span class="title--extra">Organisation des études</span>
             </div>
             <?php if(!empty($people)) : ?>
                 <div class="column-7">

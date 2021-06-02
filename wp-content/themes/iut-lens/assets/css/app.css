@@ -27393,8 +27393,9 @@ a {
       padding-bottom: 150%; } }
 
 .icon {
-  max-width: 2.5rem !important;
-  max-height: 2.5rem !important; }
+  max-width: 2.4rem !important;
+  max-height: 2.4rem !important;
+  display: inline-block; }
   .icon--big {
     max-width: 3.5rem !important;
     max-height: 3.5rem !important; }
@@ -27988,6 +27989,18 @@ form .submit-wrap input {
       .carousel__slides__slide.visible {
         visibility: visible;
         opacity: 1; }
+
+.table-alternation {
+  width: 100%; }
+  .table-alternation thead td {
+    padding-bottom: 1.5rem;
+    color: #666666; }
+  .table-alternation tbody td {
+    padding: 1.5rem 0;
+    border-top: 0.1rem solid #EEEEEE; }
+  .table-alternation tr {
+    display: flex;
+    justify-content: space-between; }
 
 html {
   font-size: 62.5%;
