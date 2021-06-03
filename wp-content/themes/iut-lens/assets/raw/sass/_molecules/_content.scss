@@ -1,6 +1,12 @@
 .content {
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 4.2rem;
+        font-weight: 700;
+        margin-bottom: 5rem;
+    }
+
     p {
-        max-width: 70ch !important;
+        max-width: 60ch !important;
         margin-bottom: 2rem;
     }
 
@@ -18,7 +24,7 @@
     img {
         max-width: 100% !important;
         width: 100% !important;
-        margin: 2.5rem auto 5rem auto !important;
+        margin: 5rem auto 10rem auto !important;
         height: auto !important;
     }
 
@@ -58,7 +64,7 @@
         color: clr(blue);
         display: inline-block;
     }
-    
+
     &:last-child {
         margin-bottom: 0 !important;
     }

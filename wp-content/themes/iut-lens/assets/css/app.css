@@ -28098,8 +28098,13 @@ form .submit-wrap input {
             color: #4A4CFF;
             width: 100% !important; }
 
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+  font-size: 4.2rem;
+  font-weight: 700;
+  margin-bottom: 5rem; }
+
 .content p {
-  max-width: 70ch !important;
+  max-width: 60ch !important;
   margin-bottom: 2rem; }
 
 .content strong {
@@ -28114,7 +28119,7 @@ form .submit-wrap input {
 .content img {
   max-width: 100% !important;
   width: 100% !important;
-  margin: 2.5rem auto 5rem auto !important;
+  margin: 5rem auto 10rem auto !important;
   height: auto !important; }
 
 .content ul {
