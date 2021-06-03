@@ -153,6 +153,10 @@
                                                 </div>
                                             </div>
                                         <?php endforeach; ?>
+                                        <div class="flex layout-column pgt-1_5 pgb-3">
+                                            <span class="text-gray">Découvrez aussi</span>
+                                            <a href="<?=get_site_url(); ?>/alternance-formation-continue" class="fw-700 hvr-text-blue">Alternance/Formation continue</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
