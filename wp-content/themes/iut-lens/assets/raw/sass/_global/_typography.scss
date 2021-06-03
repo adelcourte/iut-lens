@@ -1,11 +1,7 @@
 // Text
 p {
-    margin: 0 0 2rem 0;
-    line-height: 1.75;
-
-    &:last-of-type {
-        margin: 0;
-    }
+    line-height: 1.5;
+    margin: 0;
 
     &.small {
         font-size: 1.4rem;

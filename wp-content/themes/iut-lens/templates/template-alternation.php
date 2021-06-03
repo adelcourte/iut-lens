@@ -9,7 +9,122 @@
 get_header();
 ?>
 
-    <section class="pgt-7_5"></section>
+
+
+
+
+    <?php
+        $title = \get_field('_alt_hero_title');
+    ?>
+
+    <section class="mgt-7_5">
+        <?php if(!empty($title)) :?>
+            <div class="row align-center-center">
+                <div class="column-7">
+                    <h1 class="title--huge text-center"><?=$title; ?></h1>
+                </div>
+            </div>
+        <?php endif; ?>
+    </section>
+
+
+
+
+
+    <?php
+        $title = \get_field('_alt_fcu_title');
+        $content = \get_field('_alt_fcu_content');
+        $essentials = \get_field('_alt_fcu_essentials');
+    ?>
+
+    <section>
+        <div class="row align-spacebetween-start mgb-3_5">
+            <div class="column-4">
+                <?php if(!empty($title)) : ?>
+                    <span class="title--extra"><?=$title; ?></span>
+                <?php endif; ?>
+            </div>
+            <div class="column-7">
+                <?php if(!empty($content)) : ?>
+                    <div class="content">
+                        <?=$content; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+        <div class="row">
+            <?php if(!empty($essentials)) : ?>
+                <?php foreach($essentials as $ess) : ?>
+                    <div class="column-4 height-auto">
+                        <div class="pg-1_5 radius-1-rem bg-gray_lighter flex layout-column height-20">
+                            <span class="title--extra text-blue mgb-0_5"><?=$ess['number']; ?></span>
+                            <span class="title--small mgb-1"><?=$ess['title']; ?></span>
+                            <p class="small"><?=$ess['content']; ?></p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+    </section>
+
+
+
+
+
+    <?php
+        $title = \get_field('_alt_contracts_title');
+        $content = \get_field('_alt_contracts_content');
+        $vs = \get_field('_alt_contracts_vs');
+    ?>
+
+    <section class="pgv-6 bg-gray_lighter">
+        <div class="row align-spacebetween-start mgb-3_5">
+            <div class="column-4">
+                <?php if(!empty($title)) : ?>
+                    <span class="title--extra"><?=$title; ?></span>
+                <?php endif; ?>
+            </div>
+            <div class="column-7">
+                <?php if(!empty($content)) : ?>
+                    <div class="content">
+                        <?=$content; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+        <?php if(!empty($vs)) : ?>
+            <div class="row">
+                <div class="column-12">
+                    <div class="flex align-spacebetween-start pgb-0_75">
+                        <div class="size-25"></div>
+                        <div class="size-35">
+                            <span class="title--smaller">Contrat d'apprentissage</span>
+                        </div>
+                        <div class="size-35">
+                            <span class="title--smaller">Contrat de professionnalisation</span>
+                        </div>
+                    </div>
+                    <?php foreach($vs as $item) : ?>
+                        <div class="flex align-spacebetween-start pgv-0_75 bdt-1-gray_semilight">
+                            <div class="size-25">
+                                <span><?=$item['title']; ?></span>
+                            </div>
+                            <div class="size-35">
+                                <p class="small"><?=$item['apprenticeship']; ?></p>
+                            </div>
+                            <div class="size-35">
+                                <p class="small"><?=$item['professionalship']; ?></p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endif; ?>
+    </section>
+
+
+
+
 
     <?php
         $terms = get_terms([
@@ -93,7 +208,10 @@ get_header();
     ?>
 
     <section>
-        <div class="row">
+        <div class="row align-center-center pgb-2_5">
+            <div class="column-6 mgb-3_5">
+                <div class="title--extra text-center">Formations disponibles en alternance</div>
+            </div>
             <div class="column-12">
                 <?php if(!empty($departments)) : ?>
                     <div class="carousel">
@@ -216,6 +334,54 @@ get_header();
                     </div>
                 <?php endif; ?>
             </div>
+    </section>
+
+
+
+
+
+    <?php
+        $title = \get_field('_alt_continual_title');
+        $content = \get_field('_alt_continual_content');
+        $essentials = \get_field('_alt_continual_essentials');
+    ?>
+
+    <section>
+        <div class="row align-spacebetween-start mgb-4_5">
+            <div class="column-4">
+                <?php if(!empty($title)) : ?>
+                    <span class="title--extra"><?=$title; ?></span>
+                <?php endif; ?>
+            </div>
+            <div class="column-7">
+                <?php if(!empty($content)) : ?>
+                    <div class="content">
+                        <?=$content; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column-12">
+                <?php if(!empty($essentials)) : ?>
+                    <?php foreach($essentials as $item) : ?>
+                        <div class="dropdown closed">
+                            <div class="dropdown__header">
+                                <span class="title"><?=$item['title']; ?></span>
+                                <svg>
+                                    <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow-down"></use>
+                                </svg>
+                            </div>
+                            <?php if(!empty($item['content'])) : ?>
+                                <div class="dropdown__content content">
+                                    <?=$item['content']; ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
+        </div>
     </section>
 
 <?php

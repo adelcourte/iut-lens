@@ -158,7 +158,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="/contact" class="button--blue">Contact</a>
+                    <a href="<?=get_site_url(); ?>/contact" class="button--blue pgv-0_5 pgh-1_5">Contact</a>
                 </div>
             </div>
         </nav>
