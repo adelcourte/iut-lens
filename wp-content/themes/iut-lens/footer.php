@@ -1,7 +1,12 @@
 			<section class="mgb-0 pgv-2_5 full-width bg-blue">
 				<div class="row">
 					<div class="column-5 offset-1">
-						<span class="title--extra text-white mgb-1"><?=get_field('_visit_title', 'option'); ?></span>
+						<?php if($title = get_field('_visit_title', 'option')) : ?>
+							<span class="title--extra text-white mgb-2"><?=$title; ?></span>
+						<?php endif; ?>
+						<?php if($link = get_field('_visit_link', 'option')) : ?>
+							<a href="<?=$link['url']; ?>" target="<?$link['target']; ?>" class="button--white"><?=$link['title']; ?></a>
+						<?php endif; ?>
 					</div>
 				</div>
 			</section>

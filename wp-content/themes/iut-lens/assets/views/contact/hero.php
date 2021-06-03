@@ -18,7 +18,7 @@
                 <div class="flex layout-column">
                     <?php foreach($coords as $coord) : ?>
                         <div class="mgt-2">
-                            <span class="title mgb-1"><?=$coord['title']; ?></span>
+                            <span class="title mgb-0_75"><?=$coord['title']; ?></span>
                             <span><?=$coord['content']; ?></span>
                         </div>
                     <?php endforeach; ?>
