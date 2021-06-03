@@ -207,4 +207,44 @@
 
 
 
+    <?php
+        $ctas = \get_field('_hp_cta_list');
+    ?>
+
+    <section>
+        <div class="row">
+            <?php if(!empty($ctas)) : ?>
+                <?php foreach($ctas as $cta) : ?>
+                    <div class="column-6">
+                        <div class="pgv-4 pgh-3 radius-1-rem bg-gray_lighter flex layout-column align-center-center p-relative">
+                            <?php if($title = $cta['title']) : ?>
+                                <div class="title--big mgb-1_5"><?=$title; ?></div>
+                            <?php endif; ?>
+                            <?php if($content = $cta['content']) : ?>
+                                <p class="mgb-3 text-center"><?=$content; ?></p>
+                            <?php endif; ?>
+                            <?php if($cta_type = $cta['cta_type']) : ?>
+                                <?php if($cta_type == 'link') : ?>
+                                    <a href="<?=$link['url']; ?>" target="<?=$link['target']; ?>" class="button--white--hvr_blue"><?=$link['title']; ?></a>
+                                <?php else : ?>
+                                    <a href="<?=wp_get_attachment_url($cta['doc_id']) ?>" target="blank" class="button--white--hvr_blue"><?=$cta['button_title']; ?></a>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                            <?php if($ctas[0] == $cta) : ?>
+                                <div class="content-empty pg-2 bg-pink radius-tl-50 size-fit p-absolute left-minus-2 top-1_5"></div>
+                            <?php else : ?>
+                                <div class="content-empty pg-2 bg-aqua radius-br-100 size-fit p-absolute top-3 right-minus-2"></div>
+                                <div class="content-empty pgh-3 pgv-1_5 bg-purple radius-br-6-rem radius-bl-6-rem size-fit p-absolute left-2 bottom-minus-2"></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+    </section>
+
+
+
+
+
 <?php get_footer() ?>

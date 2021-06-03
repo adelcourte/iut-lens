@@ -17,7 +17,7 @@ get_header();
         $title = \get_field('_alt_hero_title');
     ?>
 
-    <section class="mgt-7_5">
+    <section class="mgt-12_5">
         <?php if(!empty($title)) :?>
             <div class="row align-center-center">
                 <div class="column-7">

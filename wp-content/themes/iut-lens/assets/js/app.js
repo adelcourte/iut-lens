@@ -8,12 +8,7 @@
 window.addEventListener('load', () => {
     slides = Array.from(document.getElementsByClassName('carousel__slides__slide'))
 
-    height = 0
-    for(i=0;i<slides.length;i++) {
-        if(slides[i].offsetHeight > height) {
-            height = slides[i].offsetHeight
-        }
-    }
+    height = slides[0].offsetHeight
 
     Array.from(document.getElementsByClassName('carousel__slides'))[0].style.height = height + 'px'
 
@@ -41,6 +36,10 @@ window.addEventListener('load', () => {
             }
 
             slide.classList.add('visible')
+
+            height = slide.offsetHeight
+            console.log(height)
+            document.getElementsByClassName('carousel__slides')[0].style.height = height + 'px'
         })
     )
 })
@@ -52,12 +51,30 @@ window.addEventListener('load', () => {
  * @version 1.0.0
  */
 window.addEventListener('load', () => {
+    height = document.getElementsByClassName('carousel__slides')[0].offsetHeight
+
     Array.from(document.getElementsByClassName('dropdown')).forEach(dropdown =>
         dropdown.addEventListener('click', () => {
             if(dropdown.classList.contains('closed')) {
                 dropdown.classList.remove('closed')
             } else {
                 dropdown.classList.add('closed')
+            }
+            
+            carousel_slides = Array.from(document.getElementsByClassName('carousel__slides__slide'))
+            if(carousel_slides) {
+                height_addition = 0
+                new_height = 0
+                dropdowns = Array.from(document.getElementsByClassName('dropdown'))
+
+                for(i=0;i<dropdowns.length;i++) {
+                    if(dropdowns[i].classList.contains('closed') == false) {
+                        height_addition += dropdowns[i].getElementsByClassName('dropdown__content')[0].offsetHeight
+                    }
+                }
+
+                new_height = height + height_addition + 'px'
+                document.getElementsByClassName('carousel__slides')[0].style.height = new_height
             }
         })
     )
@@ -99,21 +116,23 @@ window.addEventListener('load', () => {
     let video_popup = document.getElementById('video_popup')
     let video_dark_overlay = document.getElementById('video_dark_overlay')
 
-    video_popup_button.addEventListener('click', () => {
-        video_popup.style.visibility = 'visible'
-        video_popup.style.opacity = '1'
-
-        video_dark_overlay.style.visibility = 'visible'
-        video_dark_overlay.style.opacity = '1'
-    })
-
-    video_dark_overlay.addEventListener('click', () => {
-        video_popup.style.visibility = 'hidden'
-        video_popup.style.opacity = '0'
-
-        video_dark_overlay.style.visibility = 'hidden'
-        video_dark_overlay.style.opacity = '0'
-    })
+    if(video_popup) {
+        video_popup_button.addEventListener('click', () => {
+            video_popup.style.visibility = 'visible'
+            video_popup.style.opacity = '1'
+    
+            video_dark_overlay.style.visibility = 'visible'
+            video_dark_overlay.style.opacity = '1'
+        })
+    
+        video_dark_overlay.addEventListener('click', () => {
+            video_popup.style.visibility = 'hidden'
+            video_popup.style.opacity = '0'
+    
+            video_dark_overlay.style.visibility = 'hidden'
+            video_dark_overlay.style.opacity = '0'
+        })
+    }
 })
 /**
  * Progress Bar asset.
@@ -155,7 +174,6 @@ window.addEventListener('load', () => {
     if(side_nav = document.getElementById('side_nav')) {
         row = Array.from(document.getElementsByClassName('row'))[0]
         left = parseInt(getComputedStyle(row).getPropertyValue('margin-left'), 10) + 30 + 'px'
-        console.log(left)
         side_nav.style.left = left;
     }
 })

@@ -8,7 +8,7 @@
  * @version 1.0.0
  */
 ?>
-<section class="mgt-7_5">
+<section class="mgt-10">
     <div class="row align-spacebetween-start">
         <div class="column-4">
             <?php if($title) : ?>

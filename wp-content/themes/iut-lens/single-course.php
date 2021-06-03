@@ -207,44 +207,65 @@
 
     <?php
         $id = \get_the_ID();
+        $type = \get_field('_course_infos_type', $id)['value'];
+
+        if($type != 'but') :
 
         $years = \get_field('_course_program_years', $id);
     ?>
 
-    <section id="program" class="mgb-0 pgt-5">
+    <section id="program" class="pgt-5">
         <div class="row align-end-start">
             <div class="column-8">
                 <span class="title--extra mgb-2">Programme</span>
                 <?php if(!empty($years)) : ?>
-                    <?php foreach($years as $year) : ?>
-                        <div class="mgb-2">
-                            <span class="title--small text-blue pgb-0_25 mgb-1 size-fit bdb-2-blue"><?=$year['title']; ?></span>
-                            <?php if(!empty($year['classes'])) : ?>
-                                <?php foreach($year['classes'] as $class) : ?>
-                                    <div class="dropdown closed">
-                                        <div class="dropdown__header">
-                                            <span class="title--small--bold"><?=$class['title']; ?></span>
-                                            <svg>
-                                                <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow-down"></use>
-                                            </svg>
-                                        </div>
-                                        <?php if(!empty($class['skills'])) : ?>
-                                            <div class="dropdown__content">
-                                                <?php foreach($class['skills'] as $skill) : ?>
-                                                    <span class="pgv-0_75 pgh-1_5 radius-1-rem bg-gray_lighter size-fit mgr-1 mgb-1 title--smaller"><?=$skill['title']; ?></span>
-                                                <?php endforeach; ?>
-                                            </div>
-                                        <?php endif; ?>
-                                    </div>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
+                    <div class="carousel">
+                        <div class="carousel__header mgb-2">
+                            <?php foreach($years as $year) : ?>
+                                <span class="carousel__header__link <?php if($year == $years[0]) : ?> active <?php endif; ?>" data-cat="<?=$year['title']; ?>"><?=$year['title']; ?></span>
+                            <?php endforeach; ?>
                         </div>
-                    <?php endforeach; ?>
+                        <div class="carousel__slides size-100">
+                            <?php foreach($years as $year) : ?>
+                                <div class="carousel__slides__slide <?php if($year == $years[0]) : ?> visible <?php endif; ?>" data-cat="<?=$year['title']; ?>">
+                                    <?php if(!empty($year['classes'])) : ?>
+                                        <?php foreach($year['classes'] as $class) : ?>
+                                            <div class="dropdown closed">
+                                                <div class="dropdown__header">
+                                                    <span class="title--small--bold"><?=$class['title']; ?></span>
+                                                    <svg>
+                                                        <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow-down"></use>
+                                                    </svg>
+                                                </div>
+                                                <?php if(!empty($class['content'])) : ?>
+                                                    <div class="dropdown__content content">
+                                                        <?=$class['content']; ?>
+                                                    </div>
+                                                <?php endif; ?>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
     </section>
 
+    <?php
+
+        else :
+        
+        $specs = \get_field('_course_infos_specs');
+
+    ?>
+
+            HELLO
+    <?php
+        endif;
+    ?>
 
 
 

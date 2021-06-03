@@ -48,6 +48,14 @@ a {
         color: clr(blue);
     }
 
+    &[class*="--hvr_blue"] {
+        &:hover {
+            background: clr(blue);
+            border: 0.2rem solid clr(blue);
+            color: clr(white);
+        }
+    }
+
     &[class*="--gray"] {
         background: clr(gray_lighter);
         border: 0.2rem solid clr(gray_lighter);

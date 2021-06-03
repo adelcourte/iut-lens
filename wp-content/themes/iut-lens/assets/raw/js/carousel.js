@@ -8,12 +8,7 @@
 window.addEventListener('load', () => {
     slides = Array.from(document.getElementsByClassName('carousel__slides__slide'))
 
-    height = 0
-    for(i=0;i<slides.length;i++) {
-        if(slides[i].offsetHeight > height) {
-            height = slides[i].offsetHeight
-        }
-    }
+    height = slides[0].offsetHeight
 
     Array.from(document.getElementsByClassName('carousel__slides'))[0].style.height = height + 'px'
 
@@ -41,6 +36,10 @@ window.addEventListener('load', () => {
             }
 
             slide.classList.add('visible')
+
+            height = slide.offsetHeight
+            console.log(height)
+            document.getElementsByClassName('carousel__slides')[0].style.height = height + 'px'
         })
     )
 })

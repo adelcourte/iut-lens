@@ -1,4 +1,4 @@
-			<section class="mgb-0 pgv-2_5 full-width bg-blue">
+			<section class="mgb-0 pgv-2_5 full-width bg-blue p-relative z-100">
 				<div class="row">
 					<div class="column-5 offset-1">
 						<?php if($title = get_field('_visit_title', 'option')) : ?>
@@ -10,7 +10,7 @@
 					</div>
 				</div>
 			</section>
-			<footer id="footer" class="full-width bg-gray_lighter">
+			<footer id="footer" class="full-width bg-gray_lighter p-relative z-100">
 				<div class="row pgt-5 pgb-2_5">
 					<div class="column-4 layout-row">
 						<?php if($src = wp_get_attachment_url(get_field('_footer_logo_id', 'option'))) : ?>
