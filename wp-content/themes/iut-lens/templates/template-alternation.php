@@ -292,9 +292,9 @@ get_header();
                                                 </div>
                                             <?php else : ?>
                                                 <?php if(!empty($course['paths'])) : ?>
+                                                    <?php $course_title = true; ?>
                                                     <?php foreach($course['paths'] as $path) : ?>
                                                         <?php $specs = $path['specs']; ?>
-                                                        <?php $course_title = true; ?>
                                                         <div class="flex layout-row align-center-spacebetween pgv-0_75 bdt-1-gray_extralight">
                                                             <div class="flex size-15">
                                                                 <?php if(!empty($course['title']) && $course_title == true) : ?>

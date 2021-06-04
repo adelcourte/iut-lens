@@ -108,7 +108,7 @@
                 <?php if(!empty($courses)) : ?>
                     <?php foreach($courses as $item) : ?>
                         <?php if(!empty($item['title'])) : ?>
-                            <a href="<?php if(!empty($item['link'])) : ?> <?=$item['link']; ?> <?php endif; ?>" class="link-rectangle mgb-1">
+                            <a href="<?php if(!empty($item['link_url'])) : ?> <?=$item['link_url']; ?> <?php endif; ?>" class="link-rectangle mgb-1">
                                 <h2 class="title"><?=$item['title']; ?></h2>
                             </a>
                         <?php endif; ?>

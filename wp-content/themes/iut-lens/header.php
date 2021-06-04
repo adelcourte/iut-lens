@@ -27,7 +27,12 @@
                                     if($link['dropdown'] == true) {
                                         ?>
                                         <div class="main-menu__links__dropdown">
-                                            <span><?=$link['title']; ?> ▼</span>
+                                            <span class="link-arrow--down">
+                                                <?=$link['title']; ?>
+                                                <svg class="icon icon--black">
+                                                    <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow-down"></use>
+                                                </svg>
+                                            </span>
                                             <div class="main-menu__links__dropdown__items">
                                                 <div class="row">
                                                     <div class="column-12">
@@ -46,7 +51,12 @@
                             }
                         ?>
                         <div class="main-menu__links__dropdown">
-                            <span>Formations ▼</span>
+                            <span class="link-arrow--down">
+                                Formations
+                                <svg class="icon icon--black">
+                                    <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow-down"></use>
+                                </svg>
+                            </span>
                             <div class="main-menu__links__dropdown__items">
                                 <div class="row">
                                     <div class="column-12">
@@ -153,8 +163,8 @@
                                                 </div>
                                             </div>
                                         <?php endforeach; ?>
-                                        <div class="flex layout-column pgt-1_5 pgb-3">
-                                            <span class="text-gray">Découvrez aussi</span>
+                                        <div class="flex layout-column pgt-2 pgb-4">
+                                            <span class="text-gray mgb-0_25">Découvrez aussi</span>
                                             <a href="<?=get_site_url(); ?>/alternance-formation-continue" class="fw-700 hvr-text-blue">Alternance/Formation continue</a>
                                         </div>
                                     </div>
@@ -162,7 +172,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="<?=get_site_url(); ?>/contact" class="button--blue pgv-0_5 pgh-1_5">Contact</a>
+                    <a href="<?=get_site_url(); ?>/contact" class="button--blue--small">Contact</a>
                 </div>
             </div>
         </nav>

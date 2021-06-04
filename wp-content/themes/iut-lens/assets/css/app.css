@@ -27782,6 +27782,8 @@ a {
   width: fit-content; }
   *[class*="button"]:hover {
     cursor: pointer; }
+  *[class*="button"][class*="--small"] {
+    padding: 0.75rem 2rem; }
   *[class*="button"][class*="--blue"] {
     background: #4A4CFF;
     border: 0.2rem solid #4A4CFF;
@@ -27789,9 +27791,6 @@ a {
     *[class*="button"][class*="--blue"]:hover {
       background: #0002ca;
       border: 0.2rem solid #0002ca; }
-    *[class*="button"][class*="--blue"][class*="--small"] {
-      padding: 0.5rem 1.25rem;
-      font-size: 1.2rem; }
     *[class*="button"][class*="--blue"][class*="--inverted"] {
       background: #FFFFFF;
       color: #4A4CFF; }
@@ -27835,6 +27834,18 @@ a {
       transform: translateX(0.75rem); }
   *[class*="link-arrow"][class*="--blue"] {
     color: #4A4CFF; }
+  *[class*="link-arrow"][class*="--down"] {
+    position: relative !important;
+    padding-left: 0;
+    padding-right: 2.5rem; }
+    *[class*="link-arrow"][class*="--down"] svg {
+      left: auto;
+      right: 0;
+      transform: translateY(-20%); }
+      *[class*="link-arrow"][class*="--down"] svg:hover {
+        cursor: default; }
+        *[class*="link-arrow"][class*="--down"] svg:hover span {
+          transform: none; }
 
 .link-rectangle {
   padding: 3rem 4rem;
@@ -27877,6 +27888,9 @@ a {
   .icon--blue {
     fill: #4A4CFF;
     color: #4A4CFF; }
+  .icon--black svg {
+    color: #000000 !important;
+    fill: #000000 !important; }
   .icon--white {
     fill: #FFFFFF;
     color: #FFFFFF; }
@@ -28266,10 +28280,10 @@ form .submit-wrap input {
     align-items: start; }
     .main-menu__links__dropdown {
       padding: 3rem 0;
-      margin: 0 1.5rem; }
+      margin: 0 2rem; }
       .main-menu__links__dropdown:hover {
         margin: 0;
-        padding: 3rem 1.5rem; }
+        padding: 3rem 2rem; }
         .main-menu__links__dropdown:hover .main-menu__links__dropdown__items {
           filter: opacity(1);
           top: 100% !important;

@@ -28,6 +28,13 @@
         color: clr(blue);
     }
 
+    &--black {
+        svg {
+            color: clr(black) !important;
+            fill: clr(black) !important;
+        }
+    }
+
     &--white {
         fill: clr(white);
         color: clr(white);

@@ -13,7 +13,8 @@
         <a href="#projects" class="title--smaller hvr-text-blue mgb-0_75">Projets et stages</a>
         <a href="#access" class="title--smaller hvr-text-blue mgb-0_75">Conditions d'accès</a>
         <a href="#organisation" class="title--smaller hvr-text-blue mgb-0_75">Organisation</a>
-        <a href="#program" class="title--smaller hvr-text-blue mgb-0_75">Programme</a>
+        <a href="#program" class="title--smaller hvr-text-blue mgb-2">Programme</a>
+        <a href="<?=get_site_url(); ?>/candidater" class="button--blue--small">Candidater</a>
     </div>
 
 
