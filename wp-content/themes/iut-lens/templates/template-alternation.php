@@ -154,28 +154,37 @@ get_header();
                     foreach($courses_posts as $course) {
                         $id = $course->ID;
                         $title = $course->post_title;
-                        $specs_list = get_field('_course_specs_list', $id);
-                        $specs = [];
                         $type = get_field('_course_infos_type', $id)['value'];
                         
-                        if(!empty($specs_list)) {
-                            foreach($specs_list as $spec) {
-                                $specs[] = [
-                                    'title'             => $spec['title'],
-                                    'initial'           => $spec['offer']['initial'],
-                                    'apprenticeship'    => $spec['offer']['apprenticeship'],
-                                    'professionalship'  => $spec['offer']['professionalship'],
-                                    'continual'         => $spec['offer']['continual'],
-                                ];
-                            }
-                        }
+                        if($type != 'but') {
+                            $specs = get_field('_course_infos_alt', $id);
+                            
+                            $courses[] = [
+                                'id'        => $id,
+                                'title'     => $title,
+                                'specs'     => $specs,
+                                'type'      => $type,
+                            ];
+                        } else {
+                            $paths = [];
+                            $paths_data = get_field('_course_infos_paths', $id);
 
-                        $courses[] = [
-                            'id'        => $id,
-                            'title'     => $title,
-                            'specs'     => $specs,
-                            'type'      => $type,
-                        ];
+                            if(!empty($paths_data)) {
+                                foreach($paths_data as $path) {
+                                    $paths[] = [
+                                        'title' => $path['title'],
+                                        'specs' => $path['alt'],
+                                    ];
+                                }
+                            }
+                            
+                            $courses[] = [
+                                'id'        => $id,
+                                'title'     => $title,
+                                'paths'     => $paths,
+                                'type'      => $type,
+                            ];
+                        }
                     }
                 }
 
@@ -242,89 +251,93 @@ get_header();
                                             </div>
                                         </div>
                                         <?php foreach($dpt['courses'] as $course) : ?>
-                                            <?php if(!empty($course['specs'])) : ?>
-                                                <?php $course_title = true; ?>
-                                                <?php foreach($course['specs'] as $spec) : ?>
-                                                    <div class="flex layout-row align-center-spacebetween pgv-0_75 bdt-1-gray_extralight">
-                                                        <div class="flex size-14">
-                                                            <?php if(!empty($course['title']) && $course_title == true) : ?>
-                                                                <span class="title--small"><?=$course['title']; ?></span>
-                                                                <?php $course_title = false; ?>
-                                                            <?php endif; ?>
-                                                        </div>
-                                                        <div class="size-30 mgr-1">
-                                                            <?php if(!empty($spec['title'])) : ?>
-                                                                <span class="title--smaller"><?=$spec['title']; ?></span>
-                                                            <?php endif; ?>
-                                                        </div>
-                                                        <div class="flex size-14 align-center-center text-center">
-                                                            <?php if($spec['initial'] == true) : ?>
-                                                                <svg class="icon">
-                                                                    <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
-                                                                </svg>
-                                                            <?php endif; ?>
-                                                        </div>
-                                                        <div class="flex size-14 align-center-center text-center">
-                                                            <?php if($spec['apprenticeship'] == true) : ?>
-                                                                <svg class="icon">
-                                                                    <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
-                                                                </svg>
-                                                            <?php endif; ?>
-                                                        </div>
-                                                        <div class="flex size-14 align-center-center text-center">
-                                                            <?php if($spec['professionalship'] == true) : ?>
-                                                                <svg class="icon">
-                                                                    <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
-                                                                </svg>
-                                                            <?php endif; ?>
-                                                        </div>
-                                                        <div class="flex size-14 align-center-center text-center">
-                                                            <?php if($spec['continual'] == true) : ?>
-                                                                <svg class="icon">
-                                                                    <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
-                                                                </svg>
-                                                            <?php endif; ?>
-                                                        </div>
-                                                    </div>
-                                                <?php endforeach; ?>
-                                            <?php else : ?>
+                                            <?php if($course['type'] != 'but') : ?>
+                                                <?php $specs = $course['specs']; ?>
                                                 <div class="flex layout-row align-center-spacebetween pgv-0_75 bdt-1-gray_extralight">
-                                                    <div class="flex size-14">
+                                                    <div class="flex size-15">
                                                         <?php if(!empty($course['title'])) : ?>
                                                             <span class="title--small"><?=$course['title']; ?></span>
                                                         <?php endif; ?>
                                                     </div>
-                                                    <div class="size-30 mgr-1">
+                                                    <div class="size-29 mgr-1">
                                                     </div>
-                                                        <div class="flex size-14 align-center-center text-center">
-                                                            <?php if($spec['initial'] == true) : ?>
-                                                                <svg class="icon">
-                                                                    <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
-                                                                </svg>
-                                                            <?php endif; ?>
-                                                        </div>
-                                                        <div class="flex size-14 align-center-center text-center">
-                                                            <?php if($spec['apprenticeship'] == true) : ?>
-                                                                <svg class="icon">
-                                                                    <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
-                                                                </svg>
-                                                            <?php endif; ?>
-                                                        </div>
-                                                        <div class="flex size-14 align-center-center text-center">
-                                                            <?php if($spec['professionalship'] == true) : ?>
-                                                                <svg class="icon">
-                                                                    <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
-                                                                </svg>
-                                                            <?php endif; ?>
-                                                        </div>
-                                                        <div class="flex size-14 align-center-center text-center">
-                                                            <?php if($spec['continual'] == true) : ?>
-                                                                <svg class="icon">
-                                                                    <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
-                                                                </svg>
-                                                            <?php endif; ?>
-                                                        </div>
+                                                    <div class="flex size-14 align-center-center text-center">
+                                                        <?php if($specs['initial'] == true) : ?>
+                                                            <svg class="icon">
+                                                                <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                    <div class="flex size-14 align-center-center text-center">
+                                                        <?php if($specs['apprenticeship'] == true) : ?>
+                                                            <svg class="icon">
+                                                                <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                    <div class="flex size-14 align-center-center text-center">
+                                                        <?php if($specs['professionalship'] == true) : ?>
+                                                            <svg class="icon">
+                                                                <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                    <div class="flex size-14 align-center-center text-center">
+                                                        <?php if($specs['continual'] == true) : ?>
+                                                            <svg class="icon">
+                                                                <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
+                                                            </svg>
+                                                        <?php endif; ?>
+                                                    </div>
                                                 </div>
+                                            <?php else : ?>
+                                                <?php if(!empty($course['paths'])) : ?>
+                                                    <?php foreach($course['paths'] as $path) : ?>
+                                                        <?php $specs = $path['specs']; ?>
+                                                        <?php $course_title = true; ?>
+                                                        <div class="flex layout-row align-center-spacebetween pgv-0_75 bdt-1-gray_extralight">
+                                                            <div class="flex size-15">
+                                                                <?php if(!empty($course['title']) && $course_title == true) : ?>
+                                                                    <span class="title--small"><?=$course['title']; ?></span>
+                                                                    <?php $course_title = false; ?>
+                                                                <?php endif; ?>
+                                                            </div>
+                                                            <div class="size-29 mgr-1">
+                                                                <?php if(!empty($path['title'])) : ?>
+                                                                    <span class="title--smaller"><?=$path['title']; ?></span>
+                                                                <?php endif; ?>
+                                                            </div>
+                                                            <div class="flex size-14 align-center-center text-center">
+                                                                <?php if($specs['initial'] == true) : ?>
+                                                                    <svg class="icon">
+                                                                        <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
+                                                                    </svg>
+                                                                <?php endif; ?>
+                                                            </div>
+                                                            <div class="flex size-14 align-center-center text-center">
+                                                                <?php if($specs['apprenticeship'] == true) : ?>
+                                                                    <svg class="icon">
+                                                                        <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
+                                                                    </svg>
+                                                                <?php endif; ?>
+                                                            </div>
+                                                            <div class="flex size-14 align-center-center text-center">
+                                                                <?php if($specs['professionalship'] == true) : ?>
+                                                                    <svg class="icon">
+                                                                        <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
+                                                                    </svg>
+                                                                <?php endif; ?>
+                                                            </div>
+                                                            <div class="flex size-14 align-center-center text-center">
+                                                                <?php if($specs['continual'] == true) : ?>
+                                                                    <svg class="icon">
+                                                                        <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-check"></use>
+                                                                    </svg>
+                                                                <?php endif; ?>
+                                                            </div>
+                                                        </div>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
                                             <?php endif; ?>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
