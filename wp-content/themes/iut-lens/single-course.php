@@ -270,7 +270,7 @@
 
         <section id="program" class="pgt-5">
             <div class="row align-end-start">
-                <div class="column-8">
+                <div id="carousels_container" class="column-8">
                     <span class="title--extra mgb-2">Programme</span>
                     <?php if(!empty($paths)) : ?>
                         <select name="path_select" id="path_select">
@@ -280,7 +280,7 @@
                         </select>
                         <?php foreach($paths as $path) : ?>
                             <?php if(!empty($path['years'])) : ?>
-                                <div id="<?=$path['slug']; ?>" class="<?php if($path == $paths[0]) : ?>carousel<?php endif; ?>" style="display: none;">
+                                <div id="<?=$path['slug']; ?>" class="carousel" style="display: none;">
                                     <div class="carousel__header mgb-2">
                                         <?php foreach($path['years'] as $year) : ?>
                                             <span class="carousel__header__link <?php if($year == $path['years'][0]) : ?> active <?php endif; ?>" data-cat="<?=$year['title']; ?>"><?=$year['title']; ?></span>

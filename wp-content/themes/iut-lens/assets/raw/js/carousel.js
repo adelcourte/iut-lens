@@ -9,6 +9,7 @@ window.addEventListener('load', () => {
     carousels = Array.from(document.getElementsByClassName('carousel'))
     if(carousels.length == 1) {
         carousel_listener(carousels[0])
+        alert('hello')
     }
 })
 
