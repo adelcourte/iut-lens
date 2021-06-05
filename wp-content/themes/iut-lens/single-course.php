@@ -76,7 +76,7 @@
                 <?php endif; ?>
             </div>
             <?php if($image_src) : ?>
-                <div class="column-8 mgb-2 p-relative">
+                <div class="column-8 pgb-3 mgb-1 p-relative">
                     <div class="size-100 pgb-50-percent content-empty" style="background: <?=$dpt_color; ?> url('<?=$image_src; ?>') no-repeat center/cover;"></div>
                     <div class="content-empty p-absolute bottom-0 right-minus-2_5 pg-5 radius-br-50 z-5" style="background: <?=$dpt_color; ?>"></div>
                 </div>
