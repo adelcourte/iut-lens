@@ -27783,7 +27783,7 @@ a {
   *[class*="button"]:hover {
     cursor: pointer; }
   *[class*="button"][class*="--small"] {
-    padding: 0.75rem 2rem; }
+    padding: 1rem 2.25rem; }
   *[class*="button"][class*="--blue"] {
     background: #4A4CFF;
     border: 0.2rem solid #4A4CFF;
@@ -27859,6 +27859,13 @@ a {
     background: #EEEEEE; }
     .link-rectangle:hover * {
       transform: translateX(2rem); }
+
+.link-black {
+  font-weight: 500;
+  color: #000000;
+  transition: 0.2s ease-in-out; }
+  .link-black:hover {
+    color: #4A4CFF; }
 
 .image-container {
   content: "";
@@ -28299,6 +28306,9 @@ select {
   .main-menu__links {
     display: flex;
     align-items: start; }
+    .main-menu__links__single {
+      padding: 3rem 0;
+      margin: 0 2rem; }
     .main-menu__links__dropdown {
       padding: 3rem 0;
       margin: 0 2rem; }

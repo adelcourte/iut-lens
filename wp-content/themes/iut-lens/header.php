@@ -171,6 +171,7 @@
                                 </div>
                             </div>
                         </div>
+                        <a href="<?=home_url(); ?>/candidater" class="main-menu__links__single link-black">Candidater</a>
                     </div>
                     <a href="<?=get_site_url(); ?>/contact" class="button--blue--small">Contact</a>
                 </div>

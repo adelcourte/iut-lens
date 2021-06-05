@@ -24,27 +24,23 @@
     <?php
         $id = \get_the_ID();
 
-        $diploma   = \get_field('_course_infos_diploma', $id);
-        $title     = \get_field('_course_infos_title', $id);
-        $entry     = \get_field('_course_infos_entry', $id);
+        $diploma    = \get_field('_course_infos_diploma', $id);
+        $title      = \get_field('_course_infos_title', $id);
+        $entry      = \get_field('_course_infos_entry', $id);
+        $ess        = \get_field('_course_infos_essentials', $id);
         $image_src  = \wp_get_attachment_url(\get_field('_course_infos_image_id', $id));
-        $content   = \get_field('_course_infos_content', $id);
+        $content    = \get_field('_course_infos_content', $id);
 
         if($dpt = wp_get_post_terms($id, 'department')) {
             $dpt_color = get_field('_dpt_color', $dpt[0]->taxonomy.'_'.$dpt[0]->term_id);
             $dpt_name = $dpt[0]->name;
             $dpt_url = get_term_link($dpt[0]);
         }
-
-        $anchor_id = 'course_infos';
-        $anchor_title = 'Introduction';
-
     ?>
 
-    <section id="infos" class="mgh-auto pgt-7_5 mgb-2 md-mgb-4">
-        <a id="<?=$anchor_id; ?>" class="anchor dp_none" data-title="<?=$anchor_title; ?>"></a>
+    <section id="infos" class="mgh-auto pgt-7_5 mgb-0">
         <div class="row align-end-center p-relative">
-            <div class="column-8 mgb-2_5">
+            <div class="column-8 mgb-2">
                 <?php require_once(dirname( __FILE__ ) . '/assets/views/_components/breadcrumbs/course.php'); ?>
                 <div class="flex align-start-center mgb-1">
                     <?php if($dpt_name) : ?>
@@ -56,13 +52,40 @@
                     <?php endif; ?>
                 </div>
                 <?php if($title) : ?>
-                    <h1 class="title--huge"><?=$title; ?></h1>
+                    <h1 class="title--huge mgb-2"><?=$title; ?></h1>
+                <?php endif; ?>
+                <?php if(!empty($ess)) : ?>
+                    <div class="flex layout-row">
+                        <div class="mgr-3">
+                            <span class="text-gray_dark mgb-0_25">Niveau d'entrée</span>
+                            <span class="title--small"><?=$ess['entry']; ?></span>
+                        </div>
+                        <div class="mgr-3">
+                            <span class="text-gray_dark mgb-0_25">Durée</span>
+                            <span class="title--small"><?=$ess['duration']; ?></span>
+                        </div>
+                        <div class="mgr-3">
+                            <span class="text-gray_dark mgb-0_25">Stage</span>
+                            <span class="title--small"><?=$ess['internship']; ?></span>
+                        </div>
+                        <div class="mgr-3">
+                            <span class="text-gray_dark mgb-0_25">Alternance</span>
+                            <span class="title--small"><?=$ess['alternation']; ?></span>
+                        </div>
+                    </div>
                 <?php endif; ?>
             </div>
             <?php if($image_src) : ?>
-                <div class="column-8 pgb-2_5 p-relative">
+                <div class="column-8 mgb-2 p-relative">
                     <div class="size-100 pgb-50-percent content-empty" style="background: <?=$dpt_color; ?> url('<?=$image_src; ?>') no-repeat center/cover;"></div>
                     <div class="content-empty p-absolute bottom-0 right-minus-2_5 pg-5 radius-br-50 z-5" style="background: <?=$dpt_color; ?>"></div>
+                </div>
+            <?php endif; ?>
+            <?php if(!empty($content)) : ?>
+                <div class="column-8">
+                    <div class="content">
+                        <?=$content; ?>
+                    </div>
                 </div>
             <?php endif; ?>
         </div>

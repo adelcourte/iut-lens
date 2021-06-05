@@ -22,7 +22,7 @@ a {
     }
 
     &[class*="--small"] {
-        padding: 0.75rem 2rem;
+        padding: 1rem 2.25rem;
     }
 
     &[class*="--blue"] {
@@ -140,5 +140,15 @@ a {
         * {
             transform: translateX(2rem);
         }
+    }
+}
+
+.link-black {
+    font-weight: 500;
+    color: clr(black);
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        color: clr(blue);
     }
 }
