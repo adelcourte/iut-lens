@@ -1,0 +1,30 @@
+select {
+    outline: none !important;
+    border: 0.1rem solid clr(gray_light);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    background: clr(white) !important;
+    font-size: 1.6rem !important;
+    transition: 0.2s ease-in-out;
+    -webkit-appearance: none;
+    appearance: none;
+
+    &:hover, &:focus, &:active {
+        cursor: pointer;
+        border: 0.1rem solid clr(blue);
+    }
+
+    option {
+        background: clr(white) !important;
+        padding: 0.5rem 2rem;
+        color: clr(black) !important;
+
+        &:active, &:focus {
+            background: clr(white) !important;
+        }
+
+        &:hover {
+            background: clr(gray_lighter);
+        }
+    }
+}

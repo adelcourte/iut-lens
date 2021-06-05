@@ -28257,13 +28257,34 @@ form .submit-wrap input {
     max-height: 100%;
     display: flex;
     flex-wrap: wrap;
-    padding-top: 1rem;
     padding-bottom: 2rem; }
   .dropdown.closed .dropdown__content {
     max-height: 0 !important;
     padding: 0 !important; }
   .dropdown.closed svg {
     transform: none !important; }
+
+select {
+  outline: none !important;
+  border: 0.1rem solid #BBBBBB;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  background: #FFFFFF !important;
+  font-size: 1.6rem !important;
+  transition: 0.2s ease-in-out;
+  -webkit-appearance: none;
+  appearance: none; }
+  select:hover, select:focus, select:active {
+    cursor: pointer;
+    border: 0.1rem solid #4A4CFF; }
+  select option {
+    background: #FFFFFF !important;
+    padding: 0.5rem 2rem;
+    color: #000000 !important; }
+    select option:active, select option:focus {
+      background: #FFFFFF !important; }
+    select option:hover {
+      background: #F8F8F8; }
 
 .main-menu {
   width: 100%;
@@ -28425,7 +28446,7 @@ form .submit-wrap input {
   color: #4A4CFF;
   display: inline-block; }
 
-.content:last-child {
+.content *:last-child {
   margin-bottom: 0 !important; }
 
 .carousel {

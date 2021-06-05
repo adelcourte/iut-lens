@@ -13,48 +13,6 @@ window.addEventListener('load', () => {
     }
 })
 
-/*function carousels_listener(){
-    carousels = Array.from(document.getElementsByClassName('carousel'))
-    for(i=0;i<carousels.length;i++) {
-        slides = Array.from(carousels[i].getElementsByClassName('carousel__slides__slide'))
-    
-        height = slides[0].offsetHeight
-    
-        Array.from(document.getElementsByClassName('carousel__slides'))[0].style.height = height + 'px'
-        Array.from(document.getElementsByClassName('carousel__header__link'))[0].classList.add('active')
-    
-    
-    
-        Array.from(document.getElementsByClassName('carousel__header__link')).forEach(link =>
-            link.addEventListener('click', () => {
-                cat = link.dataset.cat
-    
-                if(link.classList.contains('active') == false) {
-                    links = Array.from(document.getElementsByClassName('carousel__header__link')).forEach(link_remove =>
-                        link_remove.classList.remove('active')
-                    )
-                    link.classList.add('active')
-                }
-    
-                slides.forEach(slide =>
-                    slide.classList.remove('visible')
-                )
-    
-                for(i=0;i<slides.length;i++) {
-                    if(slides[i].dataset.cat == cat) {
-                        slide = slides[i]
-                    }
-                }
-    
-                slide.classList.add('visible')
-    
-                height = slide.offsetHeight
-                document.getElementsByClassName('carousel__slides')[0].style.height = height + 'px'
-            })
-        )
-    }
-}*/
-
 function carousel_listener(carousel) {
     let slides_container = Array.from(carousel.getElementsByClassName('carousel__slides'))[0]
     let slides = Array.from(carousel.getElementsByClassName('carousel__slides__slide'))
@@ -182,25 +140,31 @@ window.addEventListener('load', () => {
             carousels[i].remove()
         }
 
-        // Load the event listener of the carousel
+        // Load the carousel event listener
         carousel_listener(carousels[0])
 
         // Whenever the select value changes = whenever the user chooses another path to see
         select.addEventListener('change', () => {
             // Get the current carousel = get the current path
             let current_carousel = Array.from(document.getElementsByClassName('carousel'))[0]
+            // Prepare the new carousel
             let carousel = ''
+            // Get the carousel container for the carousel switch part
             let carousels_container = document.getElementById('carousels_container')
 
+            // First, hide the current carousel
             current_carousel.style.display = 'none'
 
+            // Second, add the current carousel to the putaway array
             putaway.push({
                 id: current_carousel.id,
                 carousel: current_carousel
             })
 
+            // Third, remove the current carousel
             current_carousel.remove()
 
+            // Fourth, find the new carousel to display
             for(j=0;j<putaway.length;j++) {
                 if(putaway[j]['id'] == select.value) {
                     carousel = putaway[j]['carousel']
@@ -208,9 +172,11 @@ window.addEventListener('load', () => {
                 }
             }
 
+            // Fifth, display the new carousel
             carousel.style.display = 'flex'
             carousels_container.appendChild(carousel)
 
+            // Finally, load the carousel event listener
             carousel_listener(carousel)
         })
     }

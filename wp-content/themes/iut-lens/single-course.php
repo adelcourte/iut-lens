@@ -273,7 +273,7 @@
                 <div id="carousels_container" class="column-8">
                     <span class="title--extra mgb-2">Programme</span>
                     <?php if(!empty($paths)) : ?>
-                        <select name="path_select" id="path_select">
+                        <select name="path_select" id="path_select" class="mgb-2">
                             <?php foreach($paths as $path) : ?>
                                 <option value="<?=$path['slug']; ?>"><?=$path['title']; ?></option>
                             <?php endforeach; ?>
