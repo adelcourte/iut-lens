@@ -213,6 +213,8 @@
         if($type != 'but') :
 
         $years = \get_field('_course_program_years', $id);
+        $button_title = \get_field('_course_program_button_title', $id);
+        $file_src = \wp_get_attachment_url(\get_field('_course_program_link', $id));
     ?>
 
     <section id="program" class="pgt-5">
@@ -220,7 +222,7 @@
             <div class="column-8">
                 <span class="title--extra mgb-2">Programme</span>
                 <?php if(!empty($years)) : ?>
-                    <div class="carousel">
+                    <div class="carousel mgb-2">
                         <div class="carousel__header mgb-2">
                             <?php foreach($years as $year) : ?>
                                 <span class="carousel__header__link <?php if($year == $years[0]) : ?> active <?php endif; ?>" data-cat="<?=$year['title']; ?>"><?=$year['title']; ?></span>
@@ -251,6 +253,9 @@
                         </div>
                     </div>
                 <?php endif; ?>
+                <?php if(!empty($file_src)) : ?>
+                    <a href="<?=$file_src; ?>" class="button--blue p-relative z-25" target="blank" download><?=$button_title; ?></a>
+                <?php endif; ?>
             </div>
         </div>
     </section>
@@ -259,11 +264,58 @@
 
         else :
         
-        $specs = \get_field('_course_infos_specs');
+        $paths = \get_field('_course_program_paths', $id);
 
     ?>
 
-            HELLO
+        <section id="program" class="pgt-5">
+            <div class="row align-end-start">
+                <div class="column-8">
+                    <span class="title--extra mgb-2">Programme</span>
+                    <?php if(!empty($paths)) : ?>
+                        <select name="path_select" id="path_select">
+                            <?php foreach($paths as $path) : ?>
+                                <option value="<?=$path['slug']; ?>"><?=$path['title']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                        <?php foreach($paths as $path) : ?>
+                            <?php if(!empty($path['years'])) : ?>
+                                <div id="<?=$path['slug']; ?>" class="<?php if($path == $paths[0]) : ?>carousel<?php endif; ?>" style="display: none;">
+                                    <div class="carousel__header mgb-2">
+                                        <?php foreach($path['years'] as $year) : ?>
+                                            <span class="carousel__header__link <?php if($year == $path['years'][0]) : ?> active <?php endif; ?>" data-cat="<?=$year['title']; ?>"><?=$year['title']; ?></span>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <div class="carousel__slides size-100">
+                                        <?php foreach($path['years'] as $year) : ?>
+                                            <div class="carousel__slides__slide <?php if($year == $path['years'][0]) : ?> visible <?php endif; ?>" data-cat="<?=$year['title']; ?>">
+                                                <?php if(!empty($year['classes'])) : ?>
+                                                    <?php foreach($year['classes'] as $class) : ?>
+                                                        <div class="dropdown closed">
+                                                            <div class="dropdown__header">
+                                                                <span class="title--small--bold"><?=$class['title']; ?></span>
+                                                                <svg>
+                                                                    <use xlink:href="<?=get_template_directory_uri(); ?>/assets/svg/sprite.svg#icon-arrow-down"></use>
+                                                                </svg>
+                                                            </div>
+                                                            <?php if(!empty($class['content'])) : ?>
+                                                                <div class="dropdown__content content">
+                                                                    <?=$class['content']; ?>
+                                                                </div>
+                                                            <?php endif; ?>
+                                                        </div>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </section>
     <?php
         endif;
     ?>

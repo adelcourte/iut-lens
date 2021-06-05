@@ -43,6 +43,7 @@
         flex-wrap: nowrap;
         width: 75%;
         position: relative;
+        z-index: 10;
 
         &__slide {
             position: absolute;

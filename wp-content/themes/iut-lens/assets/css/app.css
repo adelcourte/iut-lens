@@ -28461,7 +28461,8 @@ form .submit-wrap input {
     display: flex;
     flex-wrap: nowrap;
     width: 75%;
-    position: relative; }
+    position: relative;
+    z-index: 10; }
     .carousel__slides__slide {
       position: absolute;
       top: 0;

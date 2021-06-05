@@ -6,20 +6,69 @@
  * @version 1.0.0
  */
 window.addEventListener('load', () => {
-    slides = Array.from(document.getElementsByClassName('carousel__slides__slide'))
+    carousels = Array.from(document.getElementsByClassName('carousel'))
+    if(carousels.length == 1) {
+        carousel_listener(carousels[0])
+    }
+})
 
-    height = slides[0].offsetHeight
+/*function carousels_listener(){
+    carousels = Array.from(document.getElementsByClassName('carousel'))
+    for(i=0;i<carousels.length;i++) {
+        slides = Array.from(carousels[i].getElementsByClassName('carousel__slides__slide'))
+    
+        height = slides[0].offsetHeight
+    
+        Array.from(document.getElementsByClassName('carousel__slides'))[0].style.height = height + 'px'
+        Array.from(document.getElementsByClassName('carousel__header__link'))[0].classList.add('active')
+    
+    
+    
+        Array.from(document.getElementsByClassName('carousel__header__link')).forEach(link =>
+            link.addEventListener('click', () => {
+                cat = link.dataset.cat
+    
+                if(link.classList.contains('active') == false) {
+                    links = Array.from(document.getElementsByClassName('carousel__header__link')).forEach(link_remove =>
+                        link_remove.classList.remove('active')
+                    )
+                    link.classList.add('active')
+                }
+    
+                slides.forEach(slide =>
+                    slide.classList.remove('visible')
+                )
+    
+                for(i=0;i<slides.length;i++) {
+                    if(slides[i].dataset.cat == cat) {
+                        slide = slides[i]
+                    }
+                }
+    
+                slide.classList.add('visible')
+    
+                height = slide.offsetHeight
+                document.getElementsByClassName('carousel__slides')[0].style.height = height + 'px'
+            })
+        )
+    }
+}*/
 
-    Array.from(document.getElementsByClassName('carousel__slides'))[0].style.height = height + 'px'
+function carousel_listener(carousel) {
+    let slides_container = Array.from(carousel.getElementsByClassName('carousel__slides'))[0]
+    let slides = Array.from(carousel.getElementsByClassName('carousel__slides__slide'))
+    let links = Array.from(carousel.getElementsByClassName('carousel__header__link'))
+    let height = slides[0].offsetHeight
 
+    slides_container.style.height = height + 'px'
+    links[0].classList.add('active')
 
-
-    Array.from(document.getElementsByClassName('carousel__header__link')).forEach(link =>
+    links.forEach(link =>
         link.addEventListener('click', () => {
             cat = link.dataset.cat
-
+    
             if(link.classList.contains('active') == false) {
-                links = Array.from(document.getElementsByClassName('carousel__header__link')).forEach(link_remove =>
+                links.forEach(link_remove =>
                     link_remove.classList.remove('active')
                 )
                 link.classList.add('active')
@@ -29,6 +78,7 @@ window.addEventListener('load', () => {
                 slide.classList.remove('visible')
             )
 
+            let slide = ''
             for(i=0;i<slides.length;i++) {
                 if(slides[i].dataset.cat == cat) {
                     slide = slides[i]
@@ -36,13 +86,11 @@ window.addEventListener('load', () => {
             }
 
             slide.classList.add('visible')
-
             height = slide.offsetHeight
-            console.log(height)
-            document.getElementsByClassName('carousel__slides')[0].style.height = height + 'px'
+            slides_container.style.height = height + 'px'
         })
     )
-})
+}
 /**
  * Dropdowns asset.
  *
@@ -51,8 +99,6 @@ window.addEventListener('load', () => {
  * @version 1.0.0
  */
 window.addEventListener('load', () => {
-    height = document.getElementsByClassName('carousel__slides')[0].offsetHeight
-
     Array.from(document.getElementsByClassName('dropdown')).forEach(dropdown =>
         dropdown.addEventListener('click', () => {
             if(dropdown.classList.contains('closed')) {
@@ -61,19 +107,19 @@ window.addEventListener('load', () => {
                 dropdown.classList.add('closed')
             }
             
-            carousel_slides = Array.from(document.getElementsByClassName('carousel__slides__slide'))
+            let carousel_slides = Array.from(document.getElementsByClassName('carousel__slides__slide'))
             if(carousel_slides) {
-                height_addition = 0
-                new_height = 0
-                dropdowns = Array.from(document.getElementsByClassName('dropdown'))
+                let height = 0
+                let current_slide = ''
 
-                for(i=0;i<dropdowns.length;i++) {
-                    if(dropdowns[i].classList.contains('closed') == false) {
-                        height_addition += dropdowns[i].getElementsByClassName('dropdown__content')[0].offsetHeight
+                for(i=0;i<carousel_slides.length;i++) {
+                    if(carousel_slides[i].classList.contains('visible')) {
+                        height = carousel_slides[i].offsetHeight
+                        current_slide = carousel_slides[i]
                     }
                 }
 
-                new_height = height + height_addition + 'px'
+                new_height = height + 'px'
                 document.getElementsByClassName('carousel__slides')[0].style.height = new_height
             }
         })
@@ -103,6 +149,30 @@ window.addEventListener('load', () => {
             }
         })
     )
+})
+/**
+ * Fake Path select asset.
+ *
+ * @author Antoine Delcourte <antoine.delcourte@gmail.com>
+ * @package {iut_lens}
+ * @version 1.0.0
+ */
+window.addEventListener('load', () => {
+    select = document.getElementById('path_select')
+    if(select) {
+        carousels = Array.from(document.getElementsByClassName('carousel'))
+        carousels[0].style.display = 'flex'
+        carousels_listener()
+
+        select.addEventListener('change', () => {
+            carousels[0].style.display = 'none'
+            carousels[0].classList.remove('carousel')
+            carousel = document.getElementById(select.value)
+            carousel.classList.add('carousel')
+            carousel.style.display = 'flex'
+            carousels_listener()
+        })
+    }
 })
 /**
  * Popup asset.

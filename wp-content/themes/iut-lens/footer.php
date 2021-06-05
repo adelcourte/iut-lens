@@ -1,11 +1,14 @@
-			<section class="mgb-0 pgv-2_5 full-width bg-blue p-relative z-100">
-				<div class="row">
+			<section class="mgb-0 full-width bg-blue p-relative z-100">
+				<div class="row p-relative pgv-2_5">
 					<div class="column-5 offset-1">
 						<?php if($title = get_field('_visit_title', 'option')) : ?>
 							<span class="title--extra text-white mgb-2"><?=$title; ?></span>
 						<?php endif; ?>
 						<?php if($link = get_field('_visit_link', 'option')) : ?>
 							<a href="<?=$link['url']; ?>" target="<?$link['target']; ?>" class="button--white"><?=$link['title']; ?></a>
+						<?php endif; ?>
+						<?php if($src = wp_get_attachment_url(get_field('_visit_image_id', 'option'))) : ?>
+							<img src="<?=$src; ?>" alt="virtual_visit_image" class="p-absolute right-0 bottom-0 size-40">
 						<?php endif; ?>
 					</div>
 				</div>
