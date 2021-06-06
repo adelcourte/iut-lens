@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "multicolore";
+    src: url("/font/Multicolore.otf") format("otf"),
+   }
+body{
+    font-family: "multicolore";
+    text-align: center;
+    color: white;
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.349);
+
+}
+h1{
+    margin-bottom: 10vh;
+    font-size: 3rem;
+}
+.by{
+    position: fixed;
+    bottom: 0;
+}
+.flex{
+    display:flex;
+    justify-content: space-around;
+    width: 80%;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.departement{
+    height: 13.5rem;
+    width: 24rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    background-position: center;
+    background-size:contain;
+    background-repeat:no-repeat;
+    transition: all 0.5s ease;
+}
+#MMI{
+    background-image: url(img/mmi0.png);
+}
+#INFO{
+    background-image: url(img/info0.png);
+}
+#MMI:hover{
+    background-image: url(img/mmi.png);
+    transform: scale(1.1);
+}
+#INFO:hover{
+    background-image: url(img/info.png);
+    transform: scale(1.1);
+}
+#GEA{
+    background-image: url(img/gea0.png);
+}
+#GEA:hover{
+    background-image: url(img/gea.png);
+    transform: scale(1.1);
+}
+#TC{
+    background-image: url(img/tc.png);
+}
+#TC:hover{
+    background-image: url(img/tc0.png);
+    transform: scale(1.1);
+}
+#COM{
+    background-image: url(img/commun.png);
+}
+#COM:hover{
+    background-image: url(img/commun0.png);
+    transform: scale(1.1);
+}
+#FCU{
+    background-image: url(img/FCU.png);
+}
+#FCU:hover{
+    background-image: url(img/FCU0.png);
+    transform: scale(1.1);
+}
+video {
+    position: fixed; right: 0; bottom: 0;
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto; z-index: -100;
+    background: url(polina.jpg) no-repeat;
+    background-size: cover;
+  }

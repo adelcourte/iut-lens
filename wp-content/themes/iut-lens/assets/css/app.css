@@ -42,7 +42,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 6rem;
     font-weight: 700; }
   *[class*="title"][class*="--giant"] {
-    font-size: 10rem; }
+    font-size: 10rem;
+    font-weight: 700 !important; }
   *[class*="title"][class*="--bold"] {
     font-weight: 700 !important; }
 
@@ -28292,6 +28293,14 @@ select {
       background: #FFFFFF !important; }
     select option:hover {
       background: #F8F8F8; }
+
+.label {
+  padding: 1.5rem 3rem;
+  border-radius: 1rem;
+  background: #F8F8F8;
+  width: fit-content;
+  margin: 2rem 2rem 0 0;
+  font-weight: 500; }
 
 .main-menu {
   width: 100%;

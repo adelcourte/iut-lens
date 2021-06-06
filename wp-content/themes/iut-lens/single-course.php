@@ -152,9 +152,9 @@
                     <?=$content; ?>
                 </div>
                 <?php if(!empty($jobs)) : ?>
-                    <div class="flex mgt-2 layout-wrap">
+                    <div class="flex mgt-1 layout-wrap">
                         <?php foreach($jobs as $item) : ?>
-                            <span class="pgv-0_75 pgh-1_5 radius-1-rem bg-gray_lighter size-fit mgr-1 mgb-1 title--smaller"><?=$item['title']; ?></span>
+                            <span class="label"><?=$item['title']; ?></span>
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
