@@ -176,7 +176,7 @@
                 <?php while($news->have_posts()) : ?>
                     <?php $news->the_post(); ?>
                     <div class="column-4">
-                        <div class="size-100 pgb-50-percent content-empty" style="background: white url('<?=get_the_post_thumbnail_url(); ?>') no-repeat center/cover">
+                        <div class="size-100 pgb-50-percent content-empty radius-tl-1-rem radius-tr-1-rem ovf-hidden" style="background: white url('<?=get_the_post_thumbnail_url(); ?>') no-repeat center/cover">
                         </div>
                         <div class="size-100 height-20 bg-white card-article">
                             <div class="pg-2 height-20 flex layout-column align-spacebetween-start">

@@ -8,7 +8,7 @@
 							<a href="<?=$link['url']; ?>" target="<?$link['target']; ?>" class="button--white"><?=$link['title']; ?></a>
 						<?php endif; ?>
 						<?php if($src = wp_get_attachment_url(get_field('_visit_image_id', 'option'))) : ?>
-							<img src="<?=$src; ?>" alt="virtual_visit_image" class="p-absolute right-0 bottom-0 size-40">
+							<img src="<?=$src; ?>" alt="virtual_visit_image" class="p-absolute right-0 bottom-0 size-37">
 						<?php endif; ?>
 					</div>
 				</div>
